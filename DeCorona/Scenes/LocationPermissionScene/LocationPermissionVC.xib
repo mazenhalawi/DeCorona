@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationPermissionVC" customModule="DeCorona" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_bgrnd" translatesAutoresizingMaskIntoConstraints="NO" id="Xzm-wb-A5f">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5h6-Zu-vqG">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We require your permission to access your location in order to supply you with accurate information regarding Corona virus." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2o7-VS-ah7">
+                            <rect key="frame" x="30" y="100" width="234" height="150.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="2o7-VS-ah7" firstAttribute="leading" secondItem="5h6-Zu-vqG" secondAttribute="leading" constant="30" id="0bK-1e-vbv"/>
+                        <constraint firstAttribute="trailing" secondItem="2o7-VS-ah7" secondAttribute="trailing" constant="150" id="Hsh-Ng-ztu"/>
+                        <constraint firstItem="2o7-VS-ah7" firstAttribute="top" secondItem="5h6-Zu-vqG" secondAttribute="top" constant="100" id="dvd-rh-C3D"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyM-Tg-fQU">
+                    <rect key="frame" x="145.5" y="826" width="123" height="30"/>
+                    <state key="normal" title="Skip and continue"/>
+                    <connections>
+                        <action selector="btnSkipAndContinue:" destination="-1" eventType="touchUpInside" id="kOe-Wz-WxY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-Pe-HKj">
+                    <rect key="frame" x="50" y="774" width="314" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="nJm-sr-MDl"/>
+                    </constraints>
+                    <state key="normal" title="Enable Location">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedCorner">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnEnableLocation:" destination="-1" eventType="touchUpInside" id="FUx-YP-27L"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rfm-Pe-HKj" secondAttribute="trailing" constant="50" id="2qT-Oh-Ea6"/>
+                <constraint firstAttribute="bottom" secondItem="Xzm-wb-A5f" secondAttribute="bottom" id="Ceq-Qn-8Wy"/>
+                <constraint firstAttribute="bottom" secondItem="MyM-Tg-fQU" secondAttribute="bottom" constant="40" id="Di3-le-lrv"/>
+                <constraint firstItem="rfm-Pe-HKj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="Hta-fY-sJG"/>
+                <constraint firstItem="MyM-Tg-fQU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LfH-Vs-Q61"/>
+                <constraint firstItem="5h6-Zu-vqG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OCl-CC-LGJ"/>
+                <constraint firstAttribute="trailing" secondItem="5h6-Zu-vqG" secondAttribute="trailing" id="Rii-Q4-GTw"/>
+                <constraint firstItem="Xzm-wb-A5f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fba-Zs-wEX"/>
+                <constraint firstAttribute="trailing" secondItem="Xzm-wb-A5f" secondAttribute="trailing" id="lDx-pk-0ap"/>
+                <constraint firstItem="MyM-Tg-fQU" firstAttribute="top" secondItem="rfm-Pe-HKj" secondAttribute="bottom" constant="12" id="oBH-CV-vGg"/>
+                <constraint firstItem="Xzm-wb-A5f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="q9C-s9-6qA"/>
+                <constraint firstAttribute="bottom" secondItem="5h6-Zu-vqG" secondAttribute="bottom" id="yVy-uM-h8z"/>
+                <constraint firstItem="5h6-Zu-vqG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zPi-gb-VHV"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="location_bgrnd" width="1300" height="866"/>
+    </resources>
+</document>

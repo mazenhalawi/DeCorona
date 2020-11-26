@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatusVC" customModule="DeCorona" customModuleProvider="target">
+            <connections>
+                <outlet property="containerBackground" destination="jL8-fd-JYX" id="8fq-sO-CFw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="people" translatesAutoresizingMaskIntoConstraints="NO" id="dEd-fZ-Aoe">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pne-IQ-RKQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J07-Nt-Mpj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19j-VM-xLg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="lLP-qD-L0G">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <vibrancyEffect>
+                                    <blurEffect style="regular"/>
+                                </vibrancyEffect>
+                            </visualEffectView>
+                        </subviews>
+                    </view>
+                    <blurEffect style="systemUltraThinMaterialDark"/>
+                </visualEffectView>
+                <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jL8-fd-JYX">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERl-Ag-haX">
+                    <rect key="frame" x="50" y="772" width="314" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="GhQ-Ne-s2i"/>
+                    </constraints>
+                    <state key="normal" title="Animate">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="roundedCorner">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="changeBackground:" destination="-1" eventType="touchUpInside" id="3l1-oW-5jY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dEd-fZ-Aoe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0AH-Ap-DVu"/>
+                <constraint firstItem="jL8-fd-JYX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0FL-VL-jXg"/>
+                <constraint firstItem="dEd-fZ-Aoe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="0YW-Q3-qnm"/>
+                <constraint firstItem="pne-IQ-RKQ" firstAttribute="centerX" secondItem="dEd-fZ-Aoe" secondAttribute="centerX" id="39L-07-WaU"/>
+                <constraint firstItem="pne-IQ-RKQ" firstAttribute="centerY" secondItem="dEd-fZ-Aoe" secondAttribute="centerY" id="3lg-ff-PrT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ERl-Ag-haX" secondAttribute="trailing" constant="50" id="63W-bx-cN4"/>
+                <constraint firstItem="jL8-fd-JYX" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="D98-cz-sau"/>
+                <constraint firstItem="pne-IQ-RKQ" firstAttribute="width" secondItem="dEd-fZ-Aoe" secondAttribute="width" id="DsH-2U-OD8"/>
+                <constraint firstItem="ERl-Ag-haX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="FOx-lh-A6n"/>
+                <constraint firstAttribute="trailing" secondItem="dEd-fZ-Aoe" secondAttribute="trailing" id="Oed-WZ-HLZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ERl-Ag-haX" secondAttribute="bottom" constant="50" id="Ubo-Dz-dPt"/>
+                <constraint firstAttribute="bottom" secondItem="dEd-fZ-Aoe" secondAttribute="bottom" id="asu-oO-vUH"/>
+                <constraint firstItem="pne-IQ-RKQ" firstAttribute="height" secondItem="dEd-fZ-Aoe" secondAttribute="height" id="grM-Ep-T41"/>
+                <constraint firstItem="jL8-fd-JYX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="m8F-9W-hZ7"/>
+                <constraint firstItem="jL8-fd-JYX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="qeQ-IT-6Kf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="pne-IQ-RKQ"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="people" width="1680" height="825"/>
+    </resources>
+</document>
