@@ -39,10 +39,12 @@ class StatusVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if didOpenSettings {
             if presenter.isLocationEnabled {
+                spinnerMain.startAnimating()
                 presenter.getLatestStatusUpdate()
             }
             didOpenSettings = false
         } else {
+            spinnerMain.startAnimating()
             presenter.getLatestStatusUpdate()
         }
         
@@ -75,7 +77,12 @@ class StatusVC: UIViewController {
         refresher.attributedTitle = NSAttributedString(string: "Fetching data for current location", attributes: attrib)
         refresher.backgroundColor = UIColor.clear
         refresher.tintColor = UIColor.white
+        refresher.addTarget(self, action: #selector(pullDownRefresh), for: .valueChanged)
         tblMain.refreshControl = refresher
+    }
+    
+    @objc private func pullDownRefresh() {
+        presenter.getLatestStatusUpdate()
     }
     
     private func openSettings() {
@@ -103,13 +110,6 @@ extension StatusVC : StatusPresenterOutput {
             self?.tblMain.refreshControl?.endRefreshing()
         }
     }
-    
-    func showMainSpinner() {
-        DispatchQueue.main.async { [weak self] in
-            self?.spinnerMain.startAnimating()
-        }
-    }
-    
     
     func alert(title: String, message: String) {
         DispatchQueue.main.async { [weak self] in

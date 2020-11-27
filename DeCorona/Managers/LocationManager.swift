@@ -8,13 +8,26 @@
 
 import Foundation
 import CoreLocation
-
+import Combine
 
 class LocationManager : NSObject {
     
     private let manager:CLLocationManager
+    private var _currentLocation:CLLocation? {
+        didSet {
+            locationUpdate$.send(self._currentLocation!)
+        }
+    }
+    
+    let locationUpdate$ = PassthroughSubject<CLLocation, Error>()
     
     static let current:LocationManager = LocationManager()
+    
+    var currentLocation:CLLocation? {
+        get {
+            return _currentLocation
+        }
+    }
     
     override private init() {
         manager = CLLocationManager()
@@ -35,6 +48,11 @@ class LocationManager : NSObject {
         manager.requestWhenInUseAuthorization()
     }
     
+    func findCurrentUserLocation() {
+        if (!isLocationServiceEnabled()) { return }
+        
+        manager.requestLocation()
+    }
 }
 
 extension LocationManager : CLLocationManagerDelegate {
@@ -48,5 +66,19 @@ extension LocationManager : CLLocationManagerDelegate {
         default:
             print("user has disabled location services")
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("locations count: " + locations.count.description)
+        if let firstLocation = locations.first {
+            print("latitude: " + firstLocation.coordinate.latitude.description + "  longitude: " + firstLocation.coordinate.longitude.description)
+            self._currentLocation = firstLocation
+            locationUpdate$.send(firstLocation)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("LocationManager - didFailWithError Failed to find location")
+        locationUpdate$.send(completion: .failure(error))
     }
 }

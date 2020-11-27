@@ -18,21 +18,33 @@ extension StatusInteractor : StatusInteractorInput {
         ConnectionManager().queryLatestCoronaStatusFor(latitude: latitude, longitude: longitude) { [weak self] (result: Result<Data>) in
             
             if let data = result.data, result.status == ResultStatus.Success {
-                
-                let status = try? JSONDecoder().decode(Status.self, from: data)
-                if status == nil {
+
+                let decoded = try? JSONDecoder().decode(StatusResponse.self, from: data)
+                if decoded == nil {
                     
                     print("StatusInteractor - downloadLatestStatusUpdate could not decode data from API")
-                    self?.output?.displayStatusUpdate(respose: Result(status: .Failure, error: "The data returned from the server is unrecognizable. Please try again."))
+                    self?.output?.displayStatusUpdate(response: Result(status: .Failure, error: "The data returned from the server is unrecognizable. Please try again."))
                     
                 } else {
                     
-                    self?.output?.displayStatusUpdate(respose: Result(status: .Success, data: status))
+                    let statusList = decoded!.statusList
+                    
+                    if statusList.count == 0 {
+                        self?.output?.displayStatusUpdate(response: Result(status: .Failure, error: "No data found for the current location."))
+                        
+                    } else if statusList.count == 1 {
+                        self?.output?.displayStatusUpdate(response: Result(status: .Success, data: statusList.first!))
+                        
+                    } else {
+                        let selected = statusList.first(where: {$0.location.hasPrefix("SK ")})
+                        self?.output?.displayStatusUpdate(response: Result(status: .Success, data: selected))
+                    }
+                    
                 }
                 
             } else {
                 
-                self?.output?.displayStatusUpdate(respose: Result(status: .Failure, error: result.error))
+                self?.output?.displayStatusUpdate(response: Result(status: .Failure, error: result.error))
             }
         }
     }

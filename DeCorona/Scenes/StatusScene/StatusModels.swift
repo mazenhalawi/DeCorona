@@ -23,7 +23,7 @@ struct StatusResponse : Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.statusSet = try container.decode([StatusAttributes].self, forKey: .statusSet)
+        self.statusSet = try container.decodeIfPresent([StatusAttributes].self, forKey: .statusSet) ?? []
     }
 }
 

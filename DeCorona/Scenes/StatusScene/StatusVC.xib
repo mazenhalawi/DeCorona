@@ -49,7 +49,7 @@
                         <action selector="changeBackground:" destination="-1" eventType="touchUpInside" id="3l1-oW-5jY"/>
                     </connections>
                 </button>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-X5-BcB">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-X5-BcB">
                     <rect key="frame" x="197" y="443" width="20" height="20"/>
                     <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>

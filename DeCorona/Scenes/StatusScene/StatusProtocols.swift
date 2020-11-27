@@ -9,16 +9,12 @@
 import Foundation
 
 
-protocol StatusCoordinatorInput {
-    
-}
-
 protocol StatusInteractorInput {
     func downloadLatestStatusUpdate(latitude: Double, longitude: Double)
 }
 
 protocol StatusInteractorOutput : class {
-    func displayStatusUpdate(respose: Result<Status?>)
+    func displayStatusUpdate(response: Result<Status>)
 }
 
 protocol StatusPresenterInput {
@@ -31,6 +27,5 @@ protocol StatusPresenterOutput : class {
     func alert(title: String, message: String)
     func alertLocationServiceDisabled()
     func dismissSpinners()
-    func showMainSpinner()
     func updateUI()
 }

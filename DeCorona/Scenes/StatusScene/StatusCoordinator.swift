@@ -17,16 +17,13 @@ class StatusCoordinator : NavigationCoordinator {
     
     func start() {
         let interactor = StatusInteractor()
-        let presenter = StatusPresenter(interactor: interactor, coordinator: self)
+        let presenter = StatusPresenter(interactor: interactor)
+        interactor.output = presenter
         let vc = StatusVC(presenter: presenter)
         presenter.output = vc
     
         navigationController.setViewControllers([vc], animated: false)
     }
     
-    
-}
-
-extension StatusCoordinator : StatusCoordinatorInput {
     
 }
