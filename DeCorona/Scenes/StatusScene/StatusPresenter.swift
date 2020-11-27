@@ -13,6 +13,14 @@ class StatusPresenter {
     let interactor: StatusInteractorInput
     let coordinator: StatusCoordinatorInput
     
+    var isLocationEnabled: Bool {
+        return LocationManager.current.isLocationServiceEnabled()
+    }
+    
+    var numOfRows: Int {
+        return 1
+    }
+    
     init(interactor: StatusInteractorInput, coordinator: StatusCoordinatorInput) {
         self.interactor = interactor
         self.coordinator = coordinator
@@ -20,7 +28,10 @@ class StatusPresenter {
 }
 
 extension StatusPresenter : StatusPresenterInput {
-    
+    func getLatestStatusUpdate() {
+        
+    }
+
 }
 
 

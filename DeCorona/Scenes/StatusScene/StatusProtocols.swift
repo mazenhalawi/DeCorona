@@ -14,17 +14,23 @@ protocol StatusCoordinatorInput {
 }
 
 protocol StatusInteractorInput {
-    
+    func downloadLatestStatusUpdate(latitude: Double, longitude: Double)
 }
 
 protocol StatusInteractorOutput : class {
-    
+    func displayStatusUpdate(respose: Result<Status?>)
 }
 
 protocol StatusPresenterInput {
-    
+    func getLatestStatusUpdate()
+    var isLocationEnabled: Bool { get }
+    var numOfRows: Int { get }
 }
 
 protocol StatusPresenterOutput : class {
-    
+    func alert(title: String, message: String)
+    func alertLocationServiceDisabled()
+    func dismissSpinners()
+    func showMainSpinner()
+    func updateUI()
 }

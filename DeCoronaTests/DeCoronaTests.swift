@@ -33,8 +33,8 @@ class DeCoronaTests: XCTestCase {
         
         ConnectionManager().queryLatestCoronaStatusFor(latitude: latitude, longitude: longitude) { (result) in
             if result.status == .Success {
-                XCTAssertNotNil(result.data as? Data)
-                print(result.data!!)
+                XCTAssertNotNil(result.data)
+                print(result.data!)
                 print("queryLatestCoronaStatusFor method completed successfully with Data")
             } else {
                 print("queryLatestCoronaStatusFor method completed successfully without Data")
@@ -57,8 +57,8 @@ class DeCoronaTests: XCTestCase {
         
         ConnectionManager().queryLatestCoronaStatusFor(latitude: latitude, longitude: longitude) { (result) in
             if result.status == .Success {
-                XCTAssertNotNil(result.data as? Data)
-                let json = try? JSONDecoder().decode(StatusResponse.self, from: result.data!!)
+                XCTAssertNotNil(result.data)
+                let json = try? JSONDecoder().decode(StatusResponse.self, from: result.data!)
                 XCTAssertNotNil(json)
             } else {
                 print(result.error ?? "error raised")

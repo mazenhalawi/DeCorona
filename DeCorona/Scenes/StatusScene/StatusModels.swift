@@ -23,7 +23,6 @@ struct StatusResponse : Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        print("step 1")
         self.statusSet = try container.decode([StatusAttributes].self, forKey: .statusSet)
     }
 }
@@ -38,7 +37,6 @@ fileprivate struct StatusAttributes : Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        print("step 2")
         status = try container.decode(Status.self, forKey: .attributes)
     }
 }
@@ -63,23 +61,17 @@ struct Status : Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        print("step 3")
         location = try container.decode(String.self, forKey: .location)
-        print("step 4")
         cases = try container.decode(Int.self, forKey: .cases)
-        print("step 5")
+        
         let dblCases100k = try container.decode(Double.self, forKey: .casesPer100k)
-        print("step 6")
         if let cases100k = Int(exactly: dblCases100k.rounded()) {
-            print("step 7")
             casesPer100k = cases100k
         } else {
-            print("step 8")
             throw Err.RuntimeError("Failed to decode cases_per_100k value from received dictionary")
         }
-        print("step 9")
+        
         deaths = try container.decode(Int.self, forKey: .deaths)
-        print("step 10")
         lastUpdate = try container.decode(String.self, forKey: .lastUpdate)
     }
 }

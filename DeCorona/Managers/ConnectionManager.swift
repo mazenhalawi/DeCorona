@@ -28,7 +28,7 @@ class ConnectionManager {
     
     
     
-    func queryLatestCoronaStatusFor(latitude: Double, longitude: Double, completionHandler: @escaping (Result<Data?>) -> Void) {
+    func queryLatestCoronaStatusFor(latitude: Double, longitude: Double, completionHandler: @escaping (Result<Data>) -> Void) {
         let newLatitude = latitude + 0.01
         let newLongitude = longitude + 0.01
         
@@ -40,15 +40,15 @@ class ConnectionManager {
         
         URLSession.init(configuration: sessionConfiguration).dataTask(with: url) { (data, response, error) in
             if let error = error {
-                completionHandler(Result<Data?>(status: ResultStatus.Failure, error: error.localizedDescription))
+                completionHandler(Result<Data>(status: ResultStatus.Failure, error: error.localizedDescription))
             } else if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 if let data = data {
-                    return completionHandler(Result<Data?>(status: .Success, data: data))
+                    return completionHandler(Result<Data>(status: .Success, data: data))
                 } else {
                     print("ConnectionManager - queryLatestCoronaStatusFor method returned no data")
                 }
             }
-            return completionHandler(Result<Data?>(status: .Failure, error: ERROR_DEFAULT))
+            return completionHandler(Result<Data>(status: .Failure, error: ERROR_DEFAULT))
         }.resume()
     }
 }
