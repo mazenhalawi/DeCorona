@@ -37,6 +37,7 @@
 		BA15933E256EB94800CE9380 /* NotificationPermissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15933D256EB94800CE9380 /* NotificationPermissionPresenter.swift */; };
 		BA159340256EB95600CE9380 /* NotificationPermissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15933F256EB95600CE9380 /* NotificationPermissionProtocols.swift */; };
 		BA159342256EB97A00CE9380 /* NotificationPermissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159341256EB97A00CE9380 /* NotificationPermissionCoordinator.swift */; };
+		BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D42570202800FEBEC6 /* Err.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		BA15933D256EB94800CE9380 /* NotificationPermissionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionPresenter.swift; sourceTree = "<group>"; };
 		BA15933F256EB95600CE9380 /* NotificationPermissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionProtocols.swift; sourceTree = "<group>"; };
 		BA159341256EB97A00CE9380 /* NotificationPermissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionCoordinator.swift; sourceTree = "<group>"; };
+		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				BA03EE7C256F9D99003ECEA9 /* ResultStatus.swift */,
+				BA8DC8D42570202800FEBEC6 /* Err.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */,
 				BA159340256EB95600CE9380 /* NotificationPermissionProtocols.swift in Sources */,
 				BA159331256E5C4D00CE9380 /* LocationPermissionCoordinator.swift in Sources */,
 				BA1592FB256E252300CE9380 /* AppDelegate.swift in Sources */,

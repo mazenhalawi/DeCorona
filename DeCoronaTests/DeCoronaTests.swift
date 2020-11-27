@@ -19,11 +19,6 @@ class DeCoronaTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
@@ -31,7 +26,7 @@ class DeCoronaTests: XCTestCase {
         }
     }
     
-    func testQueryLatestCoronaStatusReturnsData(){
+    func testQueryLatestCoronaStatusReturnsData() {
         let expect = expectation(description: "WEB_QRY")
         let latitude = 9.41266410790402
         let longitude = 54.8226409068342
@@ -40,9 +35,9 @@ class DeCoronaTests: XCTestCase {
             if result.status == .Success {
                 XCTAssertNotNil(result.data as? Data)
                 print(result.data!!)
-                print("request successful")
+                print("queryLatestCoronaStatusFor method completed successfully with Data")
             } else {
-                print("request failure")
+                print("queryLatestCoronaStatusFor method completed successfully without Data")
                 print(result.error ?? "error raised")
             }
             expect.fulfill()
@@ -50,6 +45,30 @@ class DeCoronaTests: XCTestCase {
         
         waitForExpectations(timeout: TimeInterval(exactly: 5)!) { (error) in
             if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func testJSONSerializationOfDataIntoStatusModel() {
+        let expect = self.expectation(description: "JSON_SERIAL_TEST")
+        let latitude = 9.41266410790402
+        let longitude = 54.8226409068342
+        
+        ConnectionManager().queryLatestCoronaStatusFor(latitude: latitude, longitude: longitude) { (result) in
+            if result.status == .Success {
+                XCTAssertNotNil(result.data as? Data)
+                let json = try? JSONDecoder().decode(StatusResponse.self, from: result.data!!)
+                XCTAssertNotNil(json)
+            } else {
+                print(result.error ?? "error raised")
+            }
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5) { (error) in
+            if let error = error {
+                print("expectation caught error")
                 print(error.localizedDescription)
             }
         }
