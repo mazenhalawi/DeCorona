@@ -14,7 +14,7 @@ protocol StatusInteractorInput {
 }
 
 protocol StatusInteractorOutput : class {
-    func displayStatusUpdate(response: Result<Status>)
+    func displayStatusUpdate(response: Result<[Status]>)
 }
 
 protocol StatusPresenterInput {

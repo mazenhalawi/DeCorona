@@ -10,9 +10,10 @@ import Foundation
 import Combine
 
 class StatusPresenter {
-    weak var output:StatusPresenterOutput?
-    let interactor: StatusInteractorInput
-    var watcher: Cancellable?
+    private weak var output:StatusPresenterOutput?
+    private let interactor: StatusInteractorInput
+    private var watcher: Cancellable?
+    private var currentStatus:Status?
     
     var isLocationEnabled: Bool {
         return LocationManager.current.isLocationServiceEnabled()
@@ -33,9 +34,20 @@ class StatusPresenter {
 
 extension StatusPresenter : StatusInteractorOutput {
     
-    func displayStatusUpdate(response: Result<Status>) {
+    func displayStatusUpdate(response: Result<[Status]>) {
         if response.status == .Success && response.data != nil {
-            print(response.data!)
+            let statusList = response.data!
+            
+            if statusList.count == 0 {
+                self.output?.alert(title: "No Data Found", message: "No data found for your current location. Please try again later.")
+                
+            } else {
+                let status = statusList.first(where: {$0.location.hasPrefix("SK ")}) ?? statusList.first!
+                self.currentStatus = status
+                self.output?.updateUI()
+            }
+            
+            
         } else {
             self.output?.alert(title: "Failure", message: response.error ?? ERROR_DEFAULT)
         }

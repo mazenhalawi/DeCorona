@@ -9,7 +9,7 @@
 import Foundation
 
 class StatusInteractor {
-    weak var output: StatusInteractorOutput?
+    fileprivate weak var output: StatusInteractorOutput?
 }
 
 extension StatusInteractor : StatusInteractorInput {
@@ -27,19 +27,7 @@ extension StatusInteractor : StatusInteractorInput {
                     
                 } else {
                     
-                    let statusList = decoded!.statusList
-                    
-                    if statusList.count == 0 {
-                        self?.output?.displayStatusUpdate(response: Result(status: .Failure, error: "No data found for the current location."))
-                        
-                    } else if statusList.count == 1 {
-                        self?.output?.displayStatusUpdate(response: Result(status: .Success, data: statusList.first!))
-                        
-                    } else {
-                        let selected = statusList.first(where: {$0.location.hasPrefix("SK ")})
-                        self?.output?.displayStatusUpdate(response: Result(status: .Success, data: selected))
-                    }
-                    
+                    self?.output?.displayStatusUpdate(response: Result(status: .Success, data: decoded!.statusList))
                 }
                 
             } else {

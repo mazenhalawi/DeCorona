@@ -69,11 +69,9 @@ extension LocationManager : CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("locations count: " + locations.count.description)
+
         if let firstLocation = locations.first {
-            print("latitude: " + firstLocation.coordinate.latitude.description + "  longitude: " + firstLocation.coordinate.longitude.description)
             self._currentLocation = firstLocation
-            locationUpdate$.send(firstLocation)
         }
     }
     
