@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 class StatusPresenter {
-    private weak var output:StatusPresenterOutput?
+    weak var output:StatusPresenterOutput?
     private let interactor: StatusInteractorInput
     private var watcher: Cancellable?
     private var currentStatus:Status?

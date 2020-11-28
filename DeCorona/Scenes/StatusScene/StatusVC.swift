@@ -11,7 +11,6 @@ import UIKit
 class StatusVC: UIViewController {
     @IBOutlet weak var containerBackground:UIView!
     @IBOutlet weak var spinnerMain:UIActivityIndicatorView!
-    @IBOutlet weak var tblMain:UITableView!
     
     private var presenter: StatusPresenterInput!
     private var index = 0
@@ -32,8 +31,7 @@ class StatusVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupTableRefreshControl()
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,11 +46,6 @@ class StatusVC: UIViewController {
             presenter.getLatestStatusUpdate()
         }
         
-    }
-
-    @IBAction func changeBackground(_ sender: UIButton) {
-    
-
     }
     
     private func changeBackground() {
@@ -69,16 +62,6 @@ class StatusVC: UIViewController {
 
         index += 1
         if index >= colors.count { index = 0; }
-    }
-
-    private func setupTableRefreshControl() {
-        let refresher = UIRefreshControl()
-        let attrib = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        refresher.attributedTitle = NSAttributedString(string: "Fetching data for current location", attributes: attrib)
-        refresher.backgroundColor = UIColor.clear
-        refresher.tintColor = UIColor.white
-        refresher.addTarget(self, action: #selector(pullDownRefresh), for: .valueChanged)
-        tblMain.refreshControl = refresher
     }
     
     @objc private func pullDownRefresh() {
@@ -101,13 +84,14 @@ class StatusVC: UIViewController {
 extension StatusVC : StatusPresenterOutput {
     
     func updateUI() {
-        tblMain.reloadData()
+//        DispatchQueue.main.async { [weak self] in
+//
+//        }
     }
     
     func dismissSpinners() {
         DispatchQueue.main.async { [weak self] in
             self?.spinnerMain.stopAnimating()
-            self?.tblMain.refreshControl?.endRefreshing()
         }
     }
     
@@ -140,14 +124,4 @@ extension StatusVC : StatusPresenterOutput {
     
 }
 
-extension StatusVC : UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.numOfRows
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-}
+

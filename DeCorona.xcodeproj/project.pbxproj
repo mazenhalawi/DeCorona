@@ -39,6 +39,7 @@
 		BA159342256EB97A00CE9380 /* NotificationPermissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159341256EB97A00CE9380 /* NotificationPermissionCoordinator.swift */; };
 		BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D42570202800FEBEC6 /* Err.swift */; };
 		BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */; };
+		BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0625723FF1004CC748 /* UIView_extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		BA159341256EB97A00CE9380 /* NotificationPermissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionCoordinator.swift; sourceTree = "<group>"; };
 		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
+		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		BA1592F9256E252300CE9380 /* DeCorona */ = {
 			isa = PBXGroup;
 			children = (
+				BAB6CB002571612F004CC748 /* Views */,
 				BA03EE7B256F9D87003ECEA9 /* Enums */,
 				BA15932F256E5BAF00CE9380 /* Models */,
 				BA15932A256E2C0A00CE9380 /* Extensions */,
@@ -242,6 +245,7 @@
 			children = (
 				BA15932B256E2D8E00CE9380 /* Button_extension.swift */,
 				BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */,
+				BAB6CB0625723FF1004CC748 /* UIView_extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +264,13 @@
 				BA159333256E5C9C00CE9380 /* NavigationCoordinator.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BAB6CB002571612F004CC748 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +394,7 @@
 				BA03EE83256FAECD003ECEA9 /* StatusVC.swift in Sources */,
 				BA15933E256EB94800CE9380 /* NotificationPermissionPresenter.swift in Sources */,
 				BA159338256E600C00CE9380 /* LocationPermissionProtocols.swift in Sources */,
+				BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */,
 				BA03EE7D256F9D99003ECEA9 /* ResultStatus.swift in Sources */,
 				BA03EE8E256FAF33003ECEA9 /* StatusCoordinator.swift in Sources */,
 				BA03EE88256FAEEB003ECEA9 /* StatusProtocols.swift in Sources */,

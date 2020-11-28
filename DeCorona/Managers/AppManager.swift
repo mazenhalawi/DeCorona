@@ -22,7 +22,7 @@ class AppManager {
     func start(initialWindow : UIWindow) {
         self.window = initialWindow
         self.window.rootViewController = baseNavController
-        showLocationPermissionScene()
+        showStatusScene()
     }
     
     func showLocationPermissionScene() {

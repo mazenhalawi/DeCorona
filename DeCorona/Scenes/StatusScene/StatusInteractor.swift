@@ -9,7 +9,7 @@
 import Foundation
 
 class StatusInteractor {
-    fileprivate weak var output: StatusInteractorOutput?
+    weak var output: StatusInteractorOutput?
 }
 
 extension StatusInteractor : StatusInteractorInput {
