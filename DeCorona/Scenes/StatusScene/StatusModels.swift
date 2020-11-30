@@ -56,6 +56,7 @@ struct Status : Decodable {
     let cases: Int
     let casesPer100k: Int
     let deaths: Int
+    let deathRate: Float
     let lastUpdate: String
     
     init(from decoder: Decoder) throws {
@@ -72,6 +73,7 @@ struct Status : Decodable {
         }
         
         deaths = try container.decode(Int.self, forKey: .deaths)
+        deathRate = try container.decode(Float.self, forKey: .deathRate)
         lastUpdate = try container.decode(String.self, forKey: .lastUpdate)
     }
 }

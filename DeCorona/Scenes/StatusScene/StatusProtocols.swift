@@ -21,6 +21,14 @@ protocol StatusPresenterInput {
     func getLatestStatusUpdate()
     var isLocationEnabled: Bool { get }
     var numOfRows: Int { get }
+    func contentForCell(at indexPath: IndexPath) -> String
+    var location: String { get }
+    var coordinates: String { get }
+    var casesPer100k: String { get }
+    var cases: String { get }
+    var deaths: String { get }
+    var deathRate: String { get }
+    var lastUpdated: String { get }
 }
 
 protocol StatusPresenterOutput : class {

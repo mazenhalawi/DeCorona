@@ -14,13 +14,19 @@ class StatusPresenter {
     private let interactor: StatusInteractorInput
     private var watcher: Cancellable?
     private var currentStatus:Status?
+    private var condition:StatusCondition {
+        get {
+            guard let status = currentStatus else { return StatusCondition.Null }
+            return StatusCondition(statusLevel: status.casesPer100k)
+        }
+    }
     
     var isLocationEnabled: Bool {
         return LocationManager.current.isLocationServiceEnabled()
     }
     
     var numOfRows: Int {
-        return 0
+        return condition.directions.count
     }
     
     init(interactor: StatusInteractorInput) {
@@ -56,6 +62,70 @@ extension StatusPresenter : StatusInteractorOutput {
 
 extension StatusPresenter : StatusPresenterInput {
     
+    var casesPer100k: String {
+        get {
+            guard let cases100k = currentStatus?.casesPer100k else { return "" }
+            return String(describing: cases100k)
+        }
+    }
+    
+    var cases: String {
+        get {
+            guard let cases = currentStatus?.cases else { return "" }
+            return String(describing: cases)
+        }
+    }
+    
+    var coordinates: String {
+        get {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.maximumFractionDigits = 4
+            
+            guard let coordinates = LocationManager.current.currentLocation?.coordinate,
+                let lat = numberFormatter.string(from: NSNumber(value: coordinates.latitude)),
+                let lon = numberFormatter.string(from: NSNumber(value: coordinates.longitude))
+            else { return "" }
+            
+            return lat + ", " + lon
+        }
+    }
+    
+    var deaths: String {
+        get {
+            guard let deaths = currentStatus?.deaths else { return "" }
+            return String(describing: deaths)
+        }
+    }
+    
+    var deathRate: String {
+        get {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.maximumFractionDigits = 2
+            guard let deathRate = currentStatus?.deathRate,
+                let rate = numberFormatter.string(from: NSNumber(value: deathRate))
+            else { return "" }
+            
+            return rate.appending(" %")
+        }
+    }
+    
+    var lastUpdated: String {
+        get {
+            guard let updatedOn = currentStatus?.lastUpdate,
+                let date = updatedOn.components(separatedBy: ", ").first
+            else { return "" }
+            
+            return date
+        }
+    }
+    
+    var location: String {
+        get {
+            let loc = LocationManager.current.isLocationServiceEnabled() ? "Undetermined" : "Service Disabled"
+            return currentStatus?.location ?? loc
+        }
+    }
+    
     func getLatestStatusUpdate() {
         
         if !LocationManager.current.isLocationServiceEnabled() {
@@ -87,6 +157,10 @@ extension StatusPresenter : StatusPresenterInput {
             LocationManager.current.findCurrentUserLocation()
             
         }
+    }
+    
+    func contentForCell(at indexPath: IndexPath) -> String {
+        return self.condition.directions[indexPath.row]
     }
 
 }

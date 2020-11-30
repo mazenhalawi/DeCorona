@@ -11,6 +11,14 @@ import UIKit
 class StatusVC: UIViewController {
     @IBOutlet weak var containerBackground:UIView!
     @IBOutlet weak var spinnerMain:UIActivityIndicatorView!
+    @IBOutlet weak var tblDirections:UITableView!
+    @IBOutlet weak var lblLocation:UILabel!
+    @IBOutlet weak var lblCoordinates:UILabel!
+    @IBOutlet weak var lblCasesPer100k:UILabel!
+    @IBOutlet weak var lblCases:UILabel!
+    @IBOutlet weak var lblDeaths:UILabel!
+    @IBOutlet weak var lblDeathRate:UILabel!
+    @IBOutlet weak var lblLastUpdated:UILabel!
     
     private var presenter: StatusPresenterInput!
     private var index = 0
@@ -31,7 +39,9 @@ class StatusVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        tblDirections.estimatedRowHeight = UITableView.automaticDimension
+        tblDirections.rowHeight = 50
+        tblDirections.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,9 +94,17 @@ class StatusVC: UIViewController {
 extension StatusVC : StatusPresenterOutput {
     
     func updateUI() {
-//        DispatchQueue.main.async { [weak self] in
-//
-//        }
+        DispatchQueue.main.async { [weak self] in
+            self?.lblCasesPer100k.text = self?.presenter.casesPer100k
+            self?.lblLocation.text = self?.presenter.location
+            self?.lblCases.text = self?.presenter.cases
+            self?.lblDeaths.text = self?.presenter.deaths
+            self?.lblDeathRate.text = self?.presenter.deathRate
+            self?.lblCoordinates.text = self?.presenter.coordinates
+            self?.lblLastUpdated.text = self?.presenter.lastUpdated
+            self?.tblDirections.reloadData()
+            
+        }
     }
     
     func dismissSpinners() {
@@ -125,3 +143,20 @@ extension StatusVC : StatusPresenterOutput {
 }
 
 
+extension StatusVC : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        presenter.numOfRows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.backgroundColor = UIColor.clear
+        cell.textLabel?.text = presenter.contentForCell(at: indexPath)
+        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.numberOfLines = 0
+        
+        return cell
+    }
+    
+    
+}
