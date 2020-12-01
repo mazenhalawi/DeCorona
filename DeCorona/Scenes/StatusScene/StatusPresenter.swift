@@ -106,7 +106,7 @@ extension StatusPresenter : StatusPresenterInput {
                 let rate = numberFormatter.string(from: NSNumber(value: deathRate))
             else { return "" }
             
-            return rate.appending(" %")
+            return rate.appending("%")
         }
     }
     
