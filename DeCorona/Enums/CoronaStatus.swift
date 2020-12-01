@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mazen Halawi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum StatusCondition {
     case Green
@@ -30,6 +30,15 @@ enum StatusCondition {
         case .Yellow: return DIRECTIONS_YELLOW
         case .Red: return DIRECTIONS_RED
         case .Null: return []
+        }
+    }
+    
+    var color:UIColor {
+        switch self {
+        case .Green: return COLOR_GREEN
+        case .Yellow: return COLOR_YELLOW
+        case .Red: return COLOR_RED
+        default: return UIColor.clear
         }
     }
 }

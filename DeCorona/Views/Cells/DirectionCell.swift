@@ -10,6 +10,10 @@ import UIKit
 
 class DirectionCell: UITableViewCell {
 
+    @IBOutlet weak var imgIcon:UIImageView!
+    @IBOutlet weak var lblDirection:UILabel!
+    @IBOutlet weak var container:UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,7 +22,21 @@ class DirectionCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        self.selectionStyle = .none
+    }
+    
+    func configure(step: Int, content: String, condition: StatusCondition) {
+        switch step {
+        case 1: imgIcon.image = #imageLiteral(resourceName: "step_one")
+        case 2: imgIcon.image = #imageLiteral(resourceName: "step_two")
+        case 3: imgIcon.image = #imageLiteral(resourceName: "step_three")
+        default: imgIcon.image = nil
+        }
+        
+        lblDirection.text = content
+        
+        self.container.backgroundColor = condition.color
+
     }
     
 }

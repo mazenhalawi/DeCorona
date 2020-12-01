@@ -19,6 +19,8 @@ class StatusVC: UIViewController {
     @IBOutlet weak var lblDeaths:UILabel!
     @IBOutlet weak var lblDeathRate:UILabel!
     @IBOutlet weak var lblLastUpdated:UILabel!
+    @IBOutlet weak var containerIndicator:UIView!
+    @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
     private var presenter: StatusPresenterInput!
     private var index = 0
@@ -42,6 +44,9 @@ class StatusVC: UIViewController {
         tblDirections.estimatedRowHeight = UITableView.automaticDimension
         tblDirections.rowHeight = 50
         tblDirections.dataSource = self
+        tblDirections.delegate = self
+        tblDirections.register(UINib(nibName: "DirectionCell", bundle: Bundle(for: DirectionCell.self)), forCellReuseIdentifier: "cellDirection")
+        tableHeight.constant = 20
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,9 +64,9 @@ class StatusVC: UIViewController {
     }
     
     private func changeBackground() {
-        let green = UIColor.init(red: 6/255, green: 149/255, blue: 14/255, alpha: 1.0)
-        let red = UIColor.init(red: 159/255, green: 9/255, blue: 10/255, alpha: 1.0)
-        let yellow = UIColor.init(red: 193/255, green: 169/255, blue: 11/255, alpha: 1.0)
+        let green = COLOR_GREEN
+        let red = COLOR_RED
+        let yellow = COLOR_YELLOW
 
         let colors = [red, yellow, green]
 
@@ -72,10 +77,6 @@ class StatusVC: UIViewController {
 
         index += 1
         if index >= colors.count { index = 0; }
-    }
-    
-    @objc private func pullDownRefresh() {
-        presenter.getLatestStatusUpdate()
     }
     
     private func openSettings() {
@@ -89,12 +90,36 @@ class StatusVC: UIViewController {
             })
         }
     }
+    
+    private func clearUI() {
+        self.containerIndicator?.backgroundColor = UIColor.clear
+        self.lblCasesPer100k.text = ""
+        self.lblLocation.text = ""
+        self.lblCases.text = ""
+        self.lblDeaths.text = ""
+        self.lblDeathRate.text = ""
+        self.lblCoordinates.text = ""
+        self.lblLastUpdated.text = ""
+        self.tblDirections.reloadData()
+    }
+    
+    private func animateIndicator() {
+        let animation = CABasicAnimation(keyPath: "backgroundColor")
+        animation.fromValue = self.presenter.condition.color.cgColor
+        animation.toValue =  UIColor.clear.cgColor
+        animation.duration = 1
+        animation.repeatCount = Float.infinity
+        animation.autoreverses = true
+        self.containerIndicator.layer.add(animation, forKey: "backgroundColor")
+    }
 }
 
 extension StatusVC : StatusPresenterOutput {
     
     func updateUI() {
         DispatchQueue.main.async { [weak self] in
+            self?.clearUI()
+            self?.containerIndicator?.backgroundColor = self?.presenter.condition.color
             self?.lblCasesPer100k.text = self?.presenter.casesPer100k
             self?.lblLocation.text = self?.presenter.location
             self?.lblCases.text = self?.presenter.cases
@@ -104,6 +129,7 @@ extension StatusVC : StatusPresenterOutput {
             self?.lblLastUpdated.text = self?.presenter.lastUpdated
             self?.tblDirections.reloadData()
             
+            self?.animateIndicator()
         }
     }
     
@@ -149,14 +175,37 @@ extension StatusVC : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = UIColor.clear
-        cell.textLabel?.text = presenter.contentForCell(at: indexPath)
-        cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.numberOfLines = 0
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellDirection") as? DirectionCell else {
+            fatalError("StatusVC - cellForRowAt generated an error. Could not deque cell.")
+        }
+        
+        cell.configure(step: indexPath.row + 1, content: presenter.contentForCell(at: indexPath), condition: presenter.condition)
         
         return cell
     }
     
     
+}
+
+extension StatusVC : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = UINib(nibName: "HeaderView", bundle: nil).instantiate(withOwner: self, options: nil).first as! UIView
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            self.tableHeight.constant += cell.contentView.bounds.height
+        }
+    }
 }

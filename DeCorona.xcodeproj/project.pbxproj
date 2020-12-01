@@ -41,6 +41,9 @@
 		BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */; };
 		BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0625723FF1004CC748 /* UIView_extension.swift */; };
 		BAB6CB092573C76E004CC748 /* CoronaStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB082573C76E004CC748 /* CoronaStatus.swift */; };
+		BAB6CB0D257500BF004CC748 /* DirectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0B257500BF004CC748 /* DirectionCell.swift */; };
+		BAB6CB0E257500BF004CC748 /* DirectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB6CB0C257500BF004CC748 /* DirectionCell.xib */; };
+		BAB6CB1025760FFC004CC748 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB6CB0F25760FFC004CC748 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,9 @@
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
 		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
 		BAB6CB082573C76E004CC748 /* CoronaStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaStatus.swift; sourceTree = "<group>"; };
+		BAB6CB0B257500BF004CC748 /* DirectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionCell.swift; sourceTree = "<group>"; };
+		BAB6CB0C257500BF004CC748 /* DirectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DirectionCell.xib; sourceTree = "<group>"; };
+		BAB6CB0F25760FFC004CC748 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,8 +278,19 @@
 		BAB6CB002571612F004CC748 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BAB6CB0A25750093004CC748 /* Cells */,
+				BAB6CB0F25760FFC004CC748 /* HeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BAB6CB0A25750093004CC748 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BAB6CB0B257500BF004CC748 /* DirectionCell.swift */,
+				BAB6CB0C257500BF004CC748 /* DirectionCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,10 +375,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA159325256E299400CE9380 /* LocationPermissionVC.xib in Resources */,
+				BAB6CB0E257500BF004CC748 /* DirectionCell.xib in Resources */,
 				BA159307256E252700CE9380 /* LaunchScreen.storyboard in Resources */,
 				BA159329256E29AA00CE9380 /* NotificationPermissionVC.xib in Resources */,
 				BA159304256E252700CE9380 /* Assets.xcassets in Resources */,
 				BA03EE84256FAECD003ECEA9 /* StatusVC.xib in Resources */,
+				BAB6CB1025760FFC004CC748 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +419,7 @@
 				BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */,
 				BA03EE7D256F9D99003ECEA9 /* ResultStatus.swift in Sources */,
 				BA03EE8E256FAF33003ECEA9 /* StatusCoordinator.swift in Sources */,
+				BAB6CB0D257500BF004CC748 /* DirectionCell.swift in Sources */,
 				BA03EE88256FAEEB003ECEA9 /* StatusProtocols.swift in Sources */,
 				BA03EE86256FAEDF003ECEA9 /* StatusPresenter.swift in Sources */,
 				BAB6CB092573C76E004CC748 /* CoronaStatus.swift in Sources */,

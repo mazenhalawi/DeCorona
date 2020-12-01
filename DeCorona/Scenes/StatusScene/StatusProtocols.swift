@@ -29,6 +29,7 @@ protocol StatusPresenterInput {
     var deaths: String { get }
     var deathRate: String { get }
     var lastUpdated: String { get }
+    var condition: StatusCondition { get }
 }
 
 protocol StatusPresenterOutput : class {

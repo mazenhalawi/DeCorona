@@ -14,12 +14,6 @@ class StatusPresenter {
     private let interactor: StatusInteractorInput
     private var watcher: Cancellable?
     private var currentStatus:Status?
-    private var condition:StatusCondition {
-        get {
-            guard let status = currentStatus else { return StatusCondition.Null }
-            return StatusCondition(statusLevel: status.casesPer100k)
-        }
-    }
     
     var isLocationEnabled: Bool {
         return LocationManager.current.isLocationServiceEnabled()
@@ -61,6 +55,13 @@ extension StatusPresenter : StatusInteractorOutput {
 }
 
 extension StatusPresenter : StatusPresenterInput {
+    
+    var condition:StatusCondition {
+        get {
+            guard let status = currentStatus else { return StatusCondition.Null }
+            return StatusCondition(statusLevel: status.casesPer100k)
+        }
+    }
     
     var casesPer100k: String {
         get {
