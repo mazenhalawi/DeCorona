@@ -46,7 +46,7 @@ class StatusVC: UIViewController {
         tblDirections.dataSource = self
         tblDirections.delegate = self
         tblDirections.register(UINib(nibName: "DirectionCell", bundle: Bundle(for: DirectionCell.self)), forCellReuseIdentifier: "cellDirection")
-        tableHeight.constant = 20
+        tableHeight.constant = 50
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -205,7 +205,8 @@ extension StatusVC : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         DispatchQueue.main.async {
-            self.tableHeight.constant += cell.contentView.bounds.height
+            self.tableHeight.constant = tableView.contentSize.height
+            tableView.layoutIfNeeded()
         }
     }
 }
