@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatusVC" customModule="DeCorona" customModuleProvider="target">
             <connections>
+                <outlet property="btnEnableNotifications" destination="LlR-im-7n3" id="sYN-Pf-Edg"/>
                 <outlet property="containerBackground" destination="jL8-fd-JYX" id="8fq-sO-CFw"/>
                 <outlet property="containerIndicator" destination="jdM-Ov-yR4" id="8TL-Iu-cIn"/>
                 <outlet property="lblCases" destination="jd8-VL-42X" id="vnl-t7-yB6"/>
@@ -327,6 +328,17 @@
                                         <constraint firstAttribute="height" constant="114" id="l8R-tq-xBv"/>
                                     </constraints>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlR-im-7n3">
+                                    <rect key="frame" x="274" y="0.0" width="132" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="pTv-yI-BGh"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="🔔 Enable notifications"/>
+                                    <connections>
+                                        <action selector="enableNotifications_click:" destination="-1" eventType="touchUpInside" id="u2W-Tl-YO5"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -339,11 +351,13 @@
                                 <constraint firstAttribute="trailing" secondItem="9cS-AL-7BI" secondAttribute="trailing" constant="40" id="fIE-B7-lcV"/>
                                 <constraint firstItem="c4o-xb-e8b" firstAttribute="top" secondItem="9cS-AL-7BI" secondAttribute="bottom" priority="900" constant="60" id="g1d-mr-UUi"/>
                                 <constraint firstItem="jdM-Ov-yR4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UyQ-XC-90s" secondAttribute="trailing" constant="20" id="jgN-dN-Bvr"/>
+                                <constraint firstAttribute="trailing" secondItem="LlR-im-7n3" secondAttribute="trailing" constant="8" id="kms-Cb-qui"/>
                                 <constraint firstItem="upA-35-kHG" firstAttribute="trailing" secondItem="JUh-Vr-pnM" secondAttribute="trailing" id="mO5-2d-JdN"/>
                                 <constraint firstItem="9cS-AL-7BI" firstAttribute="top" secondItem="upA-35-kHG" secondAttribute="bottom" constant="40" id="n25-Uz-Kfc"/>
                                 <constraint firstItem="jdM-Ov-yR4" firstAttribute="top" secondItem="DaI-Rb-FDC" secondAttribute="top" constant="50" id="pcc-Pz-G8S"/>
                                 <constraint firstItem="kSw-Gv-OQJ" firstAttribute="centerX" secondItem="DaI-Rb-FDC" secondAttribute="centerX" id="qj0-Bt-mgs"/>
                                 <constraint firstItem="UyQ-XC-90s" firstAttribute="leading" secondItem="DaI-Rb-FDC" secondAttribute="leading" constant="24" id="sGz-Ax-N59"/>
+                                <constraint firstItem="LlR-im-7n3" firstAttribute="top" secondItem="DaI-Rb-FDC" secondAttribute="top" id="sz7-AR-pMy"/>
                                 <constraint firstItem="c4o-xb-e8b" firstAttribute="leading" secondItem="DaI-Rb-FDC" secondAttribute="leading" constant="36.5" id="uxt-0e-aUo"/>
                                 <constraint firstAttribute="trailing" secondItem="c4o-xb-e8b" secondAttribute="trailing" constant="36.5" id="xRf-Pn-2nv"/>
                             </constraints>

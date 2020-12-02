@@ -12,6 +12,7 @@ class StatusVC: UIViewController {
     @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var containerBackground:UIView!
     @IBOutlet weak var spinnerMain:UIActivityIndicatorView!
+    @IBOutlet weak var btnEnableNotifications:UIButton!
     @IBOutlet weak var tblDirections:UITableView!
     @IBOutlet weak var lblLocation:UILabel!
     @IBOutlet weak var lblCoordinates:UILabel!
@@ -22,6 +23,7 @@ class StatusVC: UIViewController {
     @IBOutlet weak var lblLastUpdated:UILabel!
     @IBOutlet weak var containerIndicator:UIView!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
+    
     
     private var presenter: StatusPresenterInput!
     private var index = 0
@@ -60,6 +62,10 @@ class StatusVC: UIViewController {
             spinnerMain.startAnimating()
             presenter.getLatestStatusUpdate()
         }
+        
+    }
+    
+    @IBAction func enableNotifications_click(_ sender: UIButton) {
         
     }
     

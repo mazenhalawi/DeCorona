@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mazen Halawi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreLocation
 import Combine
 
@@ -84,6 +84,11 @@ extension LocationManager : CLLocationManagerDelegate {
         let sortedLocations = locations.sorted { $0.timestamp > $1.timestamp }
         if let firstLocation = sortedLocations.first {
             self._currentLocation = firstLocation
+        }
+        
+        if UIApplication.shared.applicationState != .active {
+            //TODO: fire notification when the app is not active
+            NotificationManager.shared.notifyUserOfLocationChange()
         }
         
     }
