@@ -91,6 +91,10 @@
 		BA15933D256EB94800CE9380 /* NotificationPermissionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionPresenter.swift; sourceTree = "<group>"; };
 		BA15933F256EB95600CE9380 /* NotificationPermissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionProtocols.swift; sourceTree = "<group>"; };
 		BA159341256EB97A00CE9380 /* NotificationPermissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionCoordinator.swift; sourceTree = "<group>"; };
+		BA2B0ACD257779A900B93CA9 /* Bremen.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Bremen.gpx; sourceTree = "<group>"; };
+		BA2B0ACF25777AFF00B93CA9 /* Berlin.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Berlin.gpx; sourceTree = "<group>"; };
+		BA2B0AD025777B0E00B93CA9 /* Leipzig.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Leipzig.gpx; sourceTree = "<group>"; };
+		BA2B0AD125777B4D00B93CA9 /* Hamburg.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Hamburg.gpx; sourceTree = "<group>"; };
 		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
 		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		BA15931C256E255F00CE9380 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				BA2B0ACE25777AEA00B93CA9 /* Locations */,
 				BA159303256E252700CE9380 /* Assets.xcassets */,
 				BA159308256E252700CE9380 /* Info.plist */,
 				BA1592FA256E252300CE9380 /* AppDelegate.swift */,
@@ -273,6 +278,17 @@
 				BA159333256E5C9C00CE9380 /* NavigationCoordinator.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BA2B0ACE25777AEA00B93CA9 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				BA2B0ACD257779A900B93CA9 /* Bremen.gpx */,
+				BA2B0ACF25777AFF00B93CA9 /* Berlin.gpx */,
+				BA2B0AD025777B0E00B93CA9 /* Leipzig.gpx */,
+				BA2B0AD125777B4D00B93CA9 /* Hamburg.gpx */,
+			);
+			path = Locations;
 			sourceTree = "<group>";
 		};
 		BAB6CB002571612F004CC748 /* Views */ = {

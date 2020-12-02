@@ -7,20 +7,43 @@
 //
 
 import Foundation
+import Combine
 
 class LocationPermissionPresenter {
     var output:LocationPermissionPresenterOutput?
     fileprivate let coordinator:LocationPermissionCoordinatorInput
     
+    private var _cancellable: Cancellable?
+    
     init(coordinator: LocationPermissionCoordinatorInput) {
         self.coordinator = coordinator
+    }
+    
+    deinit {
+        _cancellable?.cancel()
     }
     
 }
 
 extension LocationPermissionPresenter : LocationPermissionPresenterInput {
     func enableLocationServices() {
-        LocationManager.current.requestPermission()
+    
+        if let serviceEnabled = LocationManager.current.isLocationServiceEnabled()  {
+            
+            if serviceEnabled{
+                self.coordinator.finish()
+            } else {
+                LocationManager.current.requestPermission()
+            }
+            
+        } else {
+            _cancellable = LocationManager.current.locationUpdate$.sink(receiveCompletion: { (error) in
+                self.output?.alert(title: "Location Error", message: "An unexpected error has occurred, please try again.", actions: nil)
+            }, receiveValue: { (location) in
+                self.coordinator.finish()
+            })
+            LocationManager.current.requestPermission()
+        }
     }
     
     func skipAndContinue() {

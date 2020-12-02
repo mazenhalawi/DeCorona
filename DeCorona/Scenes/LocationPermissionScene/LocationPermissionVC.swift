@@ -24,12 +24,6 @@ class LocationPermissionVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
 
     @IBAction func btnEnableLocation(_ sender: UIButton) {
         presenter.enableLocationServices()
@@ -43,4 +37,13 @@ class LocationPermissionVC: UIViewController {
 
 extension LocationPermissionVC : LocationPermissionPresenterOutput {
     
+    func alert(title: String, message: String, actions: [UIAlertAction]? = nil) {
+        DispatchQueue.main.async {
+            UIAlertController.showAlert(vc: self,
+                                    title: title,
+                                    message: message,
+                                    actions: actions,
+                                    style: UIAlertController.Style.alert)
+        }
+    }
 }

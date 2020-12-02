@@ -19,7 +19,7 @@ protocol StatusInteractorOutput : class {
 
 protocol StatusPresenterInput {
     func getLatestStatusUpdate()
-    var isLocationEnabled: Bool { get }
+    var isLocationEnabled: Bool? { get }
     var numOfRows: Int { get }
     func contentForCell(at indexPath: IndexPath) -> String
     var location: String { get }

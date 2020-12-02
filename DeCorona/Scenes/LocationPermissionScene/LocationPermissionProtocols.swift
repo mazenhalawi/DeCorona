@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mazen Halawi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol LocationPermissionCoordinatorInput {
     func finish()
@@ -18,5 +18,5 @@ protocol LocationPermissionPresenterInput : class {
 }
 
 protocol LocationPermissionPresenterOutput {
-    
+    func alert(title: String, message: String, actions: [UIAlertAction]?)
 }

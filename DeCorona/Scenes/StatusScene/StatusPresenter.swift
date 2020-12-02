@@ -15,7 +15,7 @@ class StatusPresenter {
     private var watcher: Cancellable?
     private var currentStatus:Status?
     
-    var isLocationEnabled: Bool {
+    var isLocationEnabled: Bool? {
         return LocationManager.current.isLocationServiceEnabled()
     }
     
@@ -29,6 +29,21 @@ class StatusPresenter {
     
     deinit {
         watcher?.cancel()
+    }
+    
+    private func startLocationWatcher() {
+        watcher = LocationManager.current.locationUpdate$.sink(receiveCompletion: { [weak self] (error) in
+            
+            self?.output?.alert(title: "Failure", message: "Failed to detect your location. Please try again later.")
+            self?.output?.dismissSpinners()
+            
+        }) { [weak self] (location) in
+            
+            self?.interactor.downloadLatestStatusUpdate(
+                                        latitude: location.coordinate.latitude,
+                                        longitude: location.coordinate.longitude)
+            self?.output?.dismissSpinners()
+        }
     }
 }
 
@@ -122,39 +137,40 @@ extension StatusPresenter : StatusPresenterInput {
     
     var location: String {
         get {
-            let loc = LocationManager.current.isLocationServiceEnabled() ? "Undetermined" : "Service Disabled"
-            return currentStatus?.location ?? loc
+            var loc:String = ""
+            if let serviceEnabled = LocationManager.current.isLocationServiceEnabled() {
+                loc = serviceEnabled ? "Undetermined" : "Service Disabled"
+            }
+            return currentStatus?.location.replacingOccurrences(of: "SK ", with: "").replacingOccurrences(of: "LK ", with: "") ?? loc
         }
     }
     
     func getLatestStatusUpdate() {
         
-        if !LocationManager.current.isLocationServiceEnabled() {
+        let serviceEnabled:Bool? = LocationManager.current.isLocationServiceEnabled()
+        
+        //LocationService is Undetermined
+        if serviceEnabled == nil {
+            LocationManager.current.requestPermission()
+            startLocationWatcher()
+            
+        //LocationService was denied
+        } else if serviceEnabled == false {
+            
             output?.alertLocationServiceDisabled()
             return
         }
         
+        //LocationService is enabled
         if let currentLocation = LocationManager.current.currentLocation {
             
             self.interactor.downloadLatestStatusUpdate(
                 latitude: currentLocation.coordinate.latitude,
                 longitude: currentLocation.coordinate.longitude)
-            
+
         } else {
             
-            watcher = LocationManager.current.locationUpdate$.sink(receiveCompletion: { [weak self] (error) in
-                
-                self?.output?.alert(title: "Failure", message: "Failed to detect your location. Please try again later.")
-                self?.output?.dismissSpinners()
-                
-            }) { [weak self] (location) in
-                
-                self?.interactor.downloadLatestStatusUpdate(
-                                            latitude: location.coordinate.latitude,
-                                            longitude: location.coordinate.longitude)
-                self?.output?.dismissSpinners()
-            }
-            
+            self.startLocationWatcher()
             LocationManager.current.findCurrentUserLocation()
             
         }

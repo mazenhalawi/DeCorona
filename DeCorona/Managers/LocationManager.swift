@@ -33,50 +33,64 @@ class LocationManager : NSObject {
         manager = CLLocationManager()
         super.init()
         manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        manager.allowsBackgroundLocationUpdates = true
+        manager.pausesLocationUpdatesAutomatically = false
+        
+        if (isLocationServiceEnabled() ?? false) {
+            manager.startMonitoringSignificantLocationChanges()
+        }
     }
     
-    func isLocationServiceEnabled() -> Bool {
+    func isLocationServiceEnabled() -> Bool? {
         let status = CLLocationManager.authorizationStatus()
         switch (status) {
         case .authorizedAlways, .authorizedWhenInUse:
             return true
+        case .notDetermined: return nil
         default: return false
         }
     }
     
     func requestPermission() {
-        manager.requestWhenInUseAuthorization()
+        manager.requestAlwaysAuthorization()
     }
     
     func findCurrentUserLocation() {
-        if (!isLocationServiceEnabled()) { return }
         
-        manager.requestLocation()
+        if let serviceEnabled = isLocationServiceEnabled(),
+            serviceEnabled == true {
+            return
+        }
+        manager.startMonitoringSignificantLocationChanges()
     }
 }
 
 extension LocationManager : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("location manager status fired")
+        
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
-            print("user has enabled location services")
+            manager.startMonitoringSignificantLocationChanges()
         case .notDetermined:
             requestPermission()
         default:
-            print("user has disabled location services")
+            print("User has disabled location services")
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-        if let firstLocation = locations.first {
+    
+        let sortedLocations = locations.sorted { $0.timestamp > $1.timestamp }
+        if let firstLocation = sortedLocations.first {
             self._currentLocation = firstLocation
         }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("LocationManager - didFailWithError Failed to find location")
         locationUpdate$.send(completion: .failure(error))
     }
+    
 }

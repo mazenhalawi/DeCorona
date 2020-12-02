@@ -9,6 +9,7 @@
 import UIKit
 
 class StatusVC: UIViewController {
+    @IBOutlet weak var scrollView:UIScrollView!
     @IBOutlet weak var containerBackground:UIView!
     @IBOutlet weak var spinnerMain:UIActivityIndicatorView!
     @IBOutlet weak var tblDirections:UITableView!
@@ -25,6 +26,7 @@ class StatusVC: UIViewController {
     private var presenter: StatusPresenterInput!
     private var index = 0
     private var didOpenSettings = false
+    var refreshController:UIRefreshControl?
     
     convenience init(presenter: StatusPresenterInput) {
         self.init(nibName: nil, bundle: nil)
@@ -41,26 +43,44 @@ class StatusVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupScrollView()
+        setupTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if didOpenSettings {
+            
+            spinnerMain.startAnimating()
+            presenter.getLatestStatusUpdate()
+            didOpenSettings = false
+            
+        } else {
+            spinnerMain.startAnimating()
+            presenter.getLatestStatusUpdate()
+        }
+        
+    }
+    
+    private func setupScrollView() {
+        let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        refreshController = UIRefreshControl()
+        refreshController!.attributedTitle = NSAttributedString(string: "Fetching latest data", attributes: attributes)
+        refreshController!.addTarget(self, action: #selector(refreshData), for: UIControl.Event.valueChanged)
+        refreshController?.tintColor = UIColor.white
+        
+        scrollView.refreshControl = self.refreshController
+    }
+    
+    private func setupTableView() {
         tblDirections.estimatedRowHeight = UITableView.automaticDimension
         tblDirections.rowHeight = 50
         tblDirections.dataSource = self
         tblDirections.delegate = self
         tblDirections.register(UINib(nibName: "DirectionCell", bundle: Bundle(for: DirectionCell.self)), forCellReuseIdentifier: "cellDirection")
         tableHeight.constant = 50
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if didOpenSettings {
-            if presenter.isLocationEnabled {
-                spinnerMain.startAnimating()
-                presenter.getLatestStatusUpdate()
-            }
-            didOpenSettings = false
-        } else {
-            spinnerMain.startAnimating()
-            presenter.getLatestStatusUpdate()
-        }
-        
     }
     
     private func changeBackground() {
@@ -112,6 +132,10 @@ class StatusVC: UIViewController {
         animation.autoreverses = true
         self.containerIndicator.layer.add(animation, forKey: "backgroundColor")
     }
+    
+    @objc private func refreshData() {
+        self.presenter.getLatestStatusUpdate()
+    }
 }
 
 extension StatusVC : StatusPresenterOutput {
@@ -130,18 +154,21 @@ extension StatusVC : StatusPresenterOutput {
             self?.tblDirections.reloadData()
             
             self?.animateIndicator()
+            self?.dismissSpinners()
         }
     }
     
     func dismissSpinners() {
         DispatchQueue.main.async { [weak self] in
             self?.spinnerMain.stopAnimating()
+            self?.refreshController?.endRefreshing()
         }
     }
     
     func alert(title: String, message: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            self.dismissSpinners()
             UIAlertController.showAlert(vc: self,
             title: title,
             message: message)
@@ -151,12 +178,14 @@ extension StatusVC : StatusPresenterOutput {
     func alertLocationServiceDisabled() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            self.dismissSpinners()
             UIAlertController.showAlert(vc: self,
                                         title: "Location Required",
                                         message: "You have disabled location services. We require your current location to fetch relevant data. Would you like to enable the service now?",
                                         actions: [
                                             UIAlertAction(title: "No",
-                                                      style: .destructive),
+                                                      style: .destructive,
+                                                      handler: { [weak self] (_) in self?.dismissSpinners()}),
                                             UIAlertAction(title: "Yes",
                                                       style: .default,
                                                       handler: { [weak self] (_) in self?.openSettings();

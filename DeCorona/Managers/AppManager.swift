@@ -22,7 +22,14 @@ class AppManager {
     func start(initialWindow : UIWindow) {
         self.window = initialWindow
         self.window.rootViewController = baseNavController
-        showStatusScene()
+        
+        let visits = UserDefaults.standard.integer(forKey: "VISIT_COUNT")
+        if (visits == 0) {
+            showLocationPermissionScene()
+            UserDefaults.standard.set(visits + 1, forKey: "VISIT_COUNT")
+        } else {
+            showStatusScene()
+        }
     }
     
     func showLocationPermissionScene() {

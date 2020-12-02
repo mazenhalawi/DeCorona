@@ -18,6 +18,7 @@
                 <outlet property="lblDeaths" destination="YXx-HI-hEx" id="wVv-UQ-SGd"/>
                 <outlet property="lblLastUpdated" destination="znS-cU-3Ra" id="AJ0-R5-AZa"/>
                 <outlet property="lblLocation" destination="koj-So-aD8" id="nOl-sn-g2g"/>
+                <outlet property="scrollView" destination="vyJ-fJ-suA" id="bWz-fl-7LG"/>
                 <outlet property="spinnerMain" destination="E3R-X5-BcB" id="A7X-Yn-HWZ"/>
                 <outlet property="tableHeight" destination="J1w-zH-60h" id="mDA-8i-Sev"/>
                 <outlet property="tblDirections" destination="9cS-AL-7BI" id="v93-VZ-fcV"/>
@@ -359,7 +360,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="eO9-t7-S6B"/>
                 </scrollView>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="E3R-X5-BcB">
-                    <rect key="frame" x="197" y="644.5" width="20" height="29"/>
+                    <rect key="frame" x="188.5" y="144" width="37" height="37"/>
                     <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
             </subviews>
@@ -372,13 +373,11 @@
                 <constraint firstItem="jL8-fd-JYX" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="D98-cz-sau"/>
                 <constraint firstItem="vyJ-fJ-suA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Gkp-Js-cY7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vyJ-fJ-suA" secondAttribute="bottom" id="KOX-lc-JEO"/>
-                <constraint firstItem="E3R-X5-BcB" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="LEG-PY-AUT"/>
                 <constraint firstAttribute="trailing" secondItem="dEd-fZ-Aoe" secondAttribute="trailing" id="Oed-WZ-HLZ"/>
-                <constraint firstItem="E3R-X5-BcB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0223214" id="RTu-lq-rFx"/>
                 <constraint firstItem="E3R-X5-BcB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="STe-ra-bI1"/>
+                <constraint firstItem="E3R-X5-BcB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="Syt-I6-8sF"/>
                 <constraint firstItem="DaI-Rb-FDC" firstAttribute="bottom" secondItem="c4o-xb-e8b" secondAttribute="bottom" constant="20" id="Tvs-31-j77"/>
                 <constraint firstAttribute="bottom" secondItem="dEd-fZ-Aoe" secondAttribute="bottom" id="asu-oO-vUH"/>
-                <constraint firstItem="E3R-X5-BcB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.0483092" id="blT-cg-HHb"/>
                 <constraint firstItem="vyJ-fJ-suA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eid-Al-emf"/>
                 <constraint firstItem="vyJ-fJ-suA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="i2x-uq-AXD"/>
                 <constraint firstItem="Ubn-2V-HEI" firstAttribute="height" relation="greaterThanOrEqual" secondItem="jL8-fd-JYX" secondAttribute="height" id="llI-6C-py2"/>
