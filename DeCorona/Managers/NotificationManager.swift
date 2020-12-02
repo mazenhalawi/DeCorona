@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mazen Halawi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import UserNotifications
 
 
@@ -23,10 +23,22 @@ class NotificationManager : NSObject {
     
     lazy var notificationSettings = center.getNotificationSettings
     
-    func requestPermission() {
+    func requestUserPermission() {
         
-        center.requestAuthorization(options: [.alert, .sound, .provisional, .criticalAlert, .badge]) { (status, error) in
-            
+        center.requestAuthorization(options: [.alert, .sound, .badge, .providesAppNotificationSettings]) { (status, error) in
+            if let _ = error {
+                print(error!.localizedDescription)
+            }
+            print(status)
+        }
+    }
+    
+    func openSettings() {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:])
         }
     }
     
@@ -70,7 +82,7 @@ extension NotificationManager : UNUserNotificationCenterDelegate {
     
     //Display user notification settings
     func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        
+        print(notification?.date.description)
     }
     
 }

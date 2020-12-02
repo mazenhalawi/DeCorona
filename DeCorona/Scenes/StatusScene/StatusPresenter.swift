@@ -71,6 +71,23 @@ extension StatusPresenter : StatusInteractorOutput {
 
 extension StatusPresenter : StatusPresenterInput {
     
+    func refreshNotificationAuthorization() {
+        NotificationManager.shared.notificationSettings() { [weak self] (config) in
+            switch config.authorizationStatus {
+            case .authorized:
+                self?.output?.toggleNotificationButton(on: false)
+            case .denied, .notDetermined:
+                self?.output?.toggleNotificationButton(on: true)
+            default: break
+            }
+        }
+    }
+    
+    func requestNotificationPermission() {
+        NotificationManager.shared.requestUserPermission()
+    }
+    
+    
     var condition:StatusCondition {
         get {
             guard let status = currentStatus else { return StatusCondition.Null }

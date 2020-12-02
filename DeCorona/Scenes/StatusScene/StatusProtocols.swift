@@ -19,6 +19,8 @@ protocol StatusInteractorOutput : class {
 
 protocol StatusPresenterInput {
     func getLatestStatusUpdate()
+    func requestNotificationPermission()
+    func refreshNotificationAuthorization()
     var isLocationEnabled: Bool? { get }
     var numOfRows: Int { get }
     func contentForCell(at indexPath: IndexPath) -> String
@@ -37,4 +39,5 @@ protocol StatusPresenterOutput : class {
     func alertLocationServiceDisabled()
     func dismissSpinners()
     func updateUI()
+    func toggleNotificationButton(on: Bool)
 }

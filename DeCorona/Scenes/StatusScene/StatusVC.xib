@@ -328,7 +328,7 @@
                                         <constraint firstAttribute="height" constant="114" id="l8R-tq-xBv"/>
                                     </constraints>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlR-im-7n3">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlR-im-7n3">
                                     <rect key="frame" x="274" y="0.0" width="132" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="pTv-yI-BGh"/>

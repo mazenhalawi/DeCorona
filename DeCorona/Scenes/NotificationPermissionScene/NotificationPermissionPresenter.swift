@@ -21,7 +21,7 @@ class NotificationPermissionPresenter {
 extension NotificationPermissionPresenter : NotificationPermissionPresenterInput {
     
     func enableNotifications() {
-        print("create a notification manager and enable notification")
+        NotificationManager.shared.requestUserPermission()
     }
     
     func skipAndContinue() {

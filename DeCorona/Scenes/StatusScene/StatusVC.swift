@@ -63,10 +63,12 @@ class StatusVC: UIViewController {
             presenter.getLatestStatusUpdate()
         }
         
+        presenter.refreshNotificationAuthorization()
+        
     }
     
     @IBAction func enableNotifications_click(_ sender: UIButton) {
-        
+        presenter.requestNotificationPermission()
     }
     
     private func setupScrollView() {
@@ -145,6 +147,23 @@ class StatusVC: UIViewController {
 }
 
 extension StatusVC : StatusPresenterOutput {
+    
+    
+    func toggleNotificationButton(on: Bool) {
+        DispatchQueue.main.async { [weak self] in
+            if on {
+                self?.btnEnableNotifications.alpha = 0
+                self?.btnEnableNotifications.isHidden = false
+                
+                UIView.animate(withDuration: 1.2) { [weak self] in
+                    self?.btnEnableNotifications.alpha = 1
+                }
+                
+            } else {
+                self?.btnEnableNotifications.isHidden = true
+            }
+        }
+    }
     
     func updateUI() {
         DispatchQueue.main.async { [weak self] in
