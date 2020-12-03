@@ -39,6 +39,8 @@
 		BA159342256EB97A00CE9380 /* NotificationPermissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159341256EB97A00CE9380 /* NotificationPermissionCoordinator.swift */; };
 		BA2B0AD3257799AE00B93CA9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AD2257799AE00B93CA9 /* NotificationManager.swift */; };
 		BA2B0AD52578F6EE00B93CA9 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AD42578F6EE00B93CA9 /* BaseManager.swift */; };
+		BA2B0AD72579134A00B93CA9 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0AD62579134A00B93CA9 /* IndicatorView.xib */; };
+		BA2B0AD92579481C00B93CA9 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AD82579481C00B93CA9 /* IndicatorView.swift */; };
 		BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D42570202800FEBEC6 /* Err.swift */; };
 		BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */; };
 		BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0625723FF1004CC748 /* UIView_extension.swift */; };
@@ -99,6 +101,8 @@
 		BA2B0AD125777B4D00B93CA9 /* Hamburg.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Hamburg.gpx; sourceTree = "<group>"; };
 		BA2B0AD2257799AE00B93CA9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		BA2B0AD42578F6EE00B93CA9 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
+		BA2B0AD62579134A00B93CA9 /* IndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndicatorView.xib; sourceTree = "<group>"; };
+		BA2B0AD82579481C00B93CA9 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
 		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
@@ -297,11 +301,21 @@
 			path = Locations;
 			sourceTree = "<group>";
 		};
+		BA2B0ADA2579511900B93CA9 /* IndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				BA2B0AD62579134A00B93CA9 /* IndicatorView.xib */,
+				BA2B0AD82579481C00B93CA9 /* IndicatorView.swift */,
+			);
+			path = IndicatorView;
+			sourceTree = "<group>";
+		};
 		BAB6CB002571612F004CC748 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BAB6CB0A25750093004CC748 /* Cells */,
 				BAB6CB0F25760FFC004CC748 /* HeaderView.xib */,
+				BA2B0ADA2579511900B93CA9 /* IndicatorView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -398,6 +412,7 @@
 			files = (
 				BA159325256E299400CE9380 /* LocationPermissionVC.xib in Resources */,
 				BAB6CB0E257500BF004CC748 /* DirectionCell.xib in Resources */,
+				BA2B0AD72579134A00B93CA9 /* IndicatorView.xib in Resources */,
 				BA159307256E252700CE9380 /* LaunchScreen.storyboard in Resources */,
 				BA159329256E29AA00CE9380 /* NotificationPermissionVC.xib in Resources */,
 				BA159304256E252700CE9380 /* Assets.xcassets in Resources */,
@@ -426,6 +441,7 @@
 				BA1592FB256E252300CE9380 /* AppDelegate.swift in Sources */,
 				BA159324256E299400CE9380 /* LocationPermissionVC.swift in Sources */,
 				BA15933A256E805100CE9380 /* LocationManager.swift in Sources */,
+				BA2B0AD92579481C00B93CA9 /* IndicatorView.swift in Sources */,
 				BA159336256E5F1100CE9380 /* LocationPermissionPresenter.swift in Sources */,
 				BA03EE7A256F9D70003ECEA9 /* Result.swift in Sources */,
 				BA159342256EB97A00CE9380 /* NotificationPermissionCoordinator.swift in Sources */,
