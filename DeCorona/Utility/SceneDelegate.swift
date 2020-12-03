@@ -23,12 +23,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         AppManager.shared.start(initialWindow: self.window!)
         
-//        let navController = UINavigationController(rootViewController: LocationPermissionVC())
-//        navController.pushViewController(LocationPermissionVC(), animated: false)
-//        self.window?.rootViewController = navController
-        
-        
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

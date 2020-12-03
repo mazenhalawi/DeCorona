@@ -60,9 +60,9 @@ class NotificationManager : BaseManager {
     func notifyUserOfLocationChange() {
         
         let content = UNMutableNotificationContent()
-        content.title = "Corona Status Update"
-        content.subtitle = "Location change updates"
-        content.body = "It seems you have moved into another location. Check the updated directions for the current location."
+        content.title = "NOTIFICATION_TITLE".localize()
+        content.subtitle = "NOTIFICATION_SUBTITLE".localize()
+        content.body = "NOTIFICATION_MSG".localize()
         content.categoryIdentifier = CATEGORY_LOC_CHANGE
         content.threadIdentifier = CATEGORY_LOC_CHANGE
         

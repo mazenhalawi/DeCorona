@@ -62,13 +62,16 @@
                         <constraint firstItem="TtK-hS-fyY" firstAttribute="top" secondItem="Mg7-qz-cr9" secondAttribute="top" constant="12" id="4td-e9-hCP"/>
                         <constraint firstItem="BKc-t9-waO" firstAttribute="top" secondItem="r4R-hK-uHG" secondAttribute="top" id="9yg-Ur-5mg"/>
                         <constraint firstAttribute="width" constant="150" id="ALZ-Li-773"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zv1-oX-OtM" secondAttribute="trailing" constant="8" id="NaN-mH-wzi"/>
                         <constraint firstItem="TtK-hS-fyY" firstAttribute="centerX" secondItem="Mg7-qz-cr9" secondAttribute="centerX" id="Ohp-xA-IWH"/>
                         <constraint firstAttribute="height" constant="150" id="PwM-8N-dV3"/>
                         <constraint firstItem="r4R-hK-uHG" firstAttribute="top" secondItem="TtK-hS-fyY" secondAttribute="bottom" constant="12" id="VxX-HD-RHb"/>
                         <constraint firstItem="r4R-hK-uHG" firstAttribute="leading" secondItem="Mg7-qz-cr9" secondAttribute="leading" constant="16" id="XEK-Zd-XNm"/>
                         <constraint firstAttribute="bottom" secondItem="r4R-hK-uHG" secondAttribute="bottom" constant="20" id="aHv-Dn-Eyp"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BKc-t9-waO" secondAttribute="trailing" constant="8" id="aNv-aD-iQL"/>
                         <constraint firstItem="BKc-t9-waO" firstAttribute="leading" secondItem="r4R-hK-uHG" secondAttribute="trailing" constant="16" id="dm1-g0-OR2"/>
                         <constraint firstItem="Zv1-oX-OtM" firstAttribute="bottom" secondItem="r4R-hK-uHG" secondAttribute="bottom" id="iso-9b-bWu"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ULL-Df-vVb" secondAttribute="trailing" constant="8" id="kWf-FP-IA2"/>
                         <constraint firstItem="Zv1-oX-OtM" firstAttribute="leading" secondItem="r4R-hK-uHG" secondAttribute="trailing" constant="16" id="y01-G4-5Sc"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>

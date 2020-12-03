@@ -23,7 +23,7 @@ extension StatusInteractor : StatusInteractorInput {
                 if decoded == nil {
                     
                     print("StatusInteractor - downloadLatestStatusUpdate could not decode data from API")
-                    self?.output?.displayStatusUpdate(response: Result(status: .Failure, error: "The data returned from the server is unrecognizable. Please try again."))
+                    self?.output?.displayStatusUpdate(response: Result(status: .Failure, error: "SERVER_DATA_ERR".localize()))
                     
                 } else {
                     

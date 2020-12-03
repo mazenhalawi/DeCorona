@@ -38,7 +38,9 @@ extension LocationPermissionPresenter : LocationPermissionPresenterInput {
             
         } else {
             _cancellable = LocationManager.current.locationUpdate$.sink(receiveCompletion: { (error) in
-                self.output?.alert(title: "Location Error", message: "An unexpected error has occurred, please try again.", actions: nil)
+                self.output?.alert(title: "TITLE_LOC_ERROR".localize(),
+                                   message: "MSG_LOC_ERROR".localize(),
+                                   actions: nil)
             }, receiveValue: { (location) in
                 self.coordinator.finish()
             })

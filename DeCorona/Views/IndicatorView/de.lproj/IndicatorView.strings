@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Danger"; ObjectID = "BKc-t9-waO"; */
+"BKc-t9-waO.text" = "Achtung";
+
+/* Class = "UILabel"; text = "Indicator"; ObjectID = "TtK-hS-fyY"; */
+"TtK-hS-fyY.text" = "Indikator";
+
+/* Class = "UILabel"; text = "Warning"; ObjectID = "ULL-Df-vVb"; */
+"ULL-Df-vVb.text" = "Warnung";
+
+/* Class = "UILabel"; text = "Neutral"; ObjectID = "Zv1-oX-OtM"; */
+"Zv1-oX-OtM.text" = "Neutral";

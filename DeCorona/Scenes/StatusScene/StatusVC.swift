@@ -78,7 +78,7 @@ class StatusVC: UIViewController {
         let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
         refreshController = UIRefreshControl()
-        refreshController!.attributedTitle = NSAttributedString(string: "Fetching latest data", attributes: attributes)
+        refreshController!.attributedTitle = NSAttributedString(string: "TITLE_REFRESHER".localize(), attributes: attributes)
         refreshController!.addTarget(self, action: #selector(refreshData), for: UIControl.Event.valueChanged)
         refreshController?.tintColor = UIColor.white
         
@@ -181,13 +181,13 @@ extension StatusVC : StatusPresenterOutput {
             guard let self = self else { return }
             self.dismissSpinners()
             UIAlertController.showAlert(vc: self,
-                                        title: "Location Required",
-                                        message: "You have disabled location services. We require your current location to fetch relevant data. Would you like to enable the service now?",
+                                        title: "TITLE_LOC_REQ".localize(),
+                                        message: "MSG_LOC_REQ".localize(),
                                         actions: [
-                                            UIAlertAction(title: "No",
+                                            UIAlertAction(title: "No".localize(),
                                                       style: .destructive,
                                                       handler: { [weak self] (_) in self?.dismissSpinners()}),
-                                            UIAlertAction(title: "Yes",
+                                            UIAlertAction(title: "Yes".localize(),
                                                       style: .default,
                                                       handler: { [weak self] (_) in self?.presenter.openAppSettings();
                                                         

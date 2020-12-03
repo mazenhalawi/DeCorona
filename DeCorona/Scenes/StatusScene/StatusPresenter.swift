@@ -29,7 +29,8 @@ class StatusPresenter {
     private func setupLocationUpdateListener() {
         locationSubscription = LocationManager.current.locationUpdate$.sink(receiveCompletion: { [weak self] (error) in
             
-            self?.output?.alert(title: "Failure", message: "Failed to detect your location. Please try again later.")
+            self?.output?.alert(title: "Failure".localize(),
+                                message: "MSG_LOC_FAIL".localize())
             self?.output?.dismissSpinners()
             
         }) { [weak self] (location) in
@@ -60,7 +61,8 @@ extension StatusPresenter : StatusInteractorOutput {
             let statusList = response.data!
             
             if statusList.count == 0 {
-                self.output?.alert(title: "No Data Found", message: "No data found for your current location. Please try again later.")
+                self.output?.alert(title: "TITLE_NO_DATA".localize(),
+                                   message: "MSG_NO_DATA".localize())
                 
             } else {
                 let status = statusList.first(where: {$0.location.hasPrefix("SK ")}) ?? statusList.first!
@@ -70,7 +72,8 @@ extension StatusPresenter : StatusInteractorOutput {
             
             
         } else {
-            self.output?.alert(title: "Failure", message: response.error ?? ERROR_DEFAULT)
+            self.output?.alert(title: "Failure".localize(),
+                               message: response.error ?? ERROR_DEFAULT)
         }
     }
 }
@@ -102,7 +105,8 @@ extension StatusPresenter : StatusPresenterInput {
         
         if isEnabled {
             self.output?.toggleNotificationButton(on: false)
-            self.output?.alert(title: "Notification Enabled", message: "Notification is already enabled.")
+            self.output?.alert(title: "TITLE_NOTIF_ENABLED".localize(),
+                               message: "MSG_NOTIF_ENABLED".localize())
         } else {
             NotificationManager.shared.openSettings()
         }
@@ -177,7 +181,9 @@ extension StatusPresenter : StatusPresenterInput {
         get {
             var loc:String = ""
             if let serviceEnabled = LocationManager.current.isLocationServiceEnabled() {
-                loc = serviceEnabled ? "Undetermined" : "Service Disabled"
+                loc = serviceEnabled ?
+                    "Undetermined".localize() :
+                    "Service Disabled".localize()
             }
             return currentStatus?.location.replacingOccurrences(of: "SK ", with: "").replacingOccurrences(of: "LK ", with: "") ?? loc
         }

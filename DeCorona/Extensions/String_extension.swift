@@ -11,7 +11,7 @@ import Foundation
 extension String {
     
     func localize() -> String {
-        return NSLocalizedString(<#T##key: String##String#>, comment: <#T##String#>)
+        return NSLocalizedString(self, comment: "")
     }
     
 }
