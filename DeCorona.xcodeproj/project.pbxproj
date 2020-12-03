@@ -38,6 +38,7 @@
 		BA159340256EB95600CE9380 /* NotificationPermissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15933F256EB95600CE9380 /* NotificationPermissionProtocols.swift */; };
 		BA159342256EB97A00CE9380 /* NotificationPermissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159341256EB97A00CE9380 /* NotificationPermissionCoordinator.swift */; };
 		BA2B0AD3257799AE00B93CA9 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AD2257799AE00B93CA9 /* NotificationManager.swift */; };
+		BA2B0AD52578F6EE00B93CA9 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AD42578F6EE00B93CA9 /* BaseManager.swift */; };
 		BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D42570202800FEBEC6 /* Err.swift */; };
 		BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */; };
 		BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0625723FF1004CC748 /* UIView_extension.swift */; };
@@ -97,6 +98,7 @@
 		BA2B0AD025777B0E00B93CA9 /* Leipzig.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Leipzig.gpx; sourceTree = "<group>"; };
 		BA2B0AD125777B4D00B93CA9 /* Hamburg.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Hamburg.gpx; sourceTree = "<group>"; };
 		BA2B0AD2257799AE00B93CA9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		BA2B0AD42578F6EE00B93CA9 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
 		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				BA159339256E805100CE9380 /* LocationManager.swift */,
 				BA03EE77256F878F003ECEA9 /* ConnectionManager.swift */,
 				BA2B0AD2257799AE00B93CA9 /* NotificationManager.swift */,
+				BA2B0AD42578F6EE00B93CA9 /* BaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				BAB6CB0D257500BF004CC748 /* DirectionCell.swift in Sources */,
 				BA03EE88256FAEEB003ECEA9 /* StatusProtocols.swift in Sources */,
 				BA03EE86256FAEDF003ECEA9 /* StatusPresenter.swift in Sources */,
+				BA2B0AD52578F6EE00B93CA9 /* BaseManager.swift in Sources */,
 				BAB6CB092573C76E004CC748 /* CoronaStatus.swift in Sources */,
 				BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */,
 				BA15932C256E2D8E00CE9380 /* Button_extension.swift in Sources */,

@@ -27,7 +27,6 @@ class StatusVC: UIViewController {
     
     private var presenter: StatusPresenterInput!
     private var index = 0
-    private var didOpenSettings = false
     var refreshController:UIRefreshControl?
     
     convenience init(presenter: StatusPresenterInput) {
@@ -46,25 +45,29 @@ class StatusVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidRiseFromBackground)
+            , name: NSNotification.Name.init(KEY_APP_ACTIVE), object: nil)
+        
         setupScrollView()
         setupTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if didOpenSettings {
-            
-            spinnerMain.startAnimating()
-            presenter.getLatestStatusUpdate()
-            didOpenSettings = false
-            
-        } else {
-            spinnerMain.startAnimating()
-            presenter.getLatestStatusUpdate()
-        }
+        spinnerMain.startAnimating()
+        presenter.getLatestStatusUpdate()
         
-        presenter.refreshNotificationAuthorization()
+        presenter.refreshPresenter()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func appDidRiseFromBackground() {
+        animateIndicator()
+        presenter.refreshPresenter()
     }
     
     @IBAction func enableNotifications_click(_ sender: UIButton) {
@@ -89,34 +92,6 @@ class StatusVC: UIViewController {
         tblDirections.delegate = self
         tblDirections.register(UINib(nibName: "DirectionCell", bundle: Bundle(for: DirectionCell.self)), forCellReuseIdentifier: "cellDirection")
         tableHeight.constant = 50
-    }
-    
-    private func changeBackground() {
-        let green = COLOR_GREEN
-        let red = COLOR_RED
-        let yellow = COLOR_YELLOW
-
-        let colors = [red, yellow, green]
-
-        UIView.animate(withDuration: 2) {
-            self.containerBackground.backgroundColor = colors[self.index]
-            self.containerBackground.alpha = 0.9
-        }
-
-        index += 1
-        if index >= colors.count { index = 0; }
-    }
-    
-    private func openSettings() {
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-            return
-        }
-
-        if UIApplication.shared.canOpenURL(settingsUrl) {
-            UIApplication.shared.open(settingsUrl, completionHandler: { [weak self] (success) in
-                self?.didOpenSettings = success
-            })
-        }
     }
     
     private func clearUI() {
@@ -213,7 +188,7 @@ extension StatusVC : StatusPresenterOutput {
                                                       handler: { [weak self] (_) in self?.dismissSpinners()}),
                                             UIAlertAction(title: "Yes",
                                                       style: .default,
-                                                      handler: { [weak self] (_) in self?.openSettings();
+                                                      handler: { [weak self] (_) in self?.presenter.openAppSettings();
                                                         
                                             })
                                         ])

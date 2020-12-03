@@ -8,20 +8,34 @@
 
 import UIKit
 import UserNotifications
+import Combine
 
-
-class NotificationManager : NSObject {
+class NotificationManager : BaseManager {
     
     let center = UNUserNotificationCenter.current()
     
     static let shared = NotificationManager()
     
+    let notificationStatusUpdate$ = CurrentValueSubject<Bool?, Never>(nil)
+    
     private override init() {
         super.init()
         center.delegate = self
+        refreshAuthorizationStatus()
     }
     
-    lazy var notificationSettings = center.getNotificationSettings
+    func refreshAuthorizationStatus() {
+        center.getNotificationSettings { (settings) in
+            switch settings.authorizationStatus {
+            case .denied:
+                self.notificationStatusUpdate$.send(false)
+            case .notDetermined:
+                self.notificationStatusUpdate$.send(nil)
+            default:
+                self.notificationStatusUpdate$.send(true)
+            }
+        }
+    }
     
     func requestUserPermission() {
         
@@ -29,7 +43,8 @@ class NotificationManager : NSObject {
             if let _ = error {
                 print(error!.localizedDescription)
             }
-            print(status)
+            
+            self.notificationStatusUpdate$.send(status)
         }
     }
     

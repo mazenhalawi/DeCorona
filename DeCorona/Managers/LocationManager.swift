@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import Combine
 
-class LocationManager : NSObject {
+class LocationManager : BaseManager {
     
     private let manager:CLLocationManager
     private var _currentLocation:CLLocation? {
@@ -41,6 +41,7 @@ class LocationManager : NSObject {
             manager.startMonitoringSignificantLocationChanges()
         }
     }
+    
     
     func isLocationServiceEnabled() -> Bool? {
         let status = CLLocationManager.authorizationStatus()
@@ -86,7 +87,7 @@ extension LocationManager : CLLocationManagerDelegate {
             self._currentLocation = firstLocation
         }
         
-        if UIApplication.shared.applicationState != .active {
+        if UIApplication.shared.applicationState == .background {
             //TODO: fire notification when the app is not active
             NotificationManager.shared.notifyUserOfLocationChange()
         }

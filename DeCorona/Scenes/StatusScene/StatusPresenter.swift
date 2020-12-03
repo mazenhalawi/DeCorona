@@ -12,27 +12,22 @@ import Combine
 class StatusPresenter {
     weak var output:StatusPresenterOutput?
     private let interactor: StatusInteractorInput
-    private var watcher: Cancellable?
     private var currentStatus:Status?
-    
-    var isLocationEnabled: Bool? {
-        return LocationManager.current.isLocationServiceEnabled()
-    }
-    
-    var numOfRows: Int {
-        return condition.directions.count
-    }
+    private var locationSubscription: Cancellable?
+    private var notificationSubscription:Cancellable?
     
     init(interactor: StatusInteractorInput) {
         self.interactor = interactor
+        setupNotificationUpdateListener()
     }
     
     deinit {
-        watcher?.cancel()
+        locationSubscription?.cancel()
+        notificationSubscription?.cancel()
     }
     
-    private func startLocationWatcher() {
-        watcher = LocationManager.current.locationUpdate$.sink(receiveCompletion: { [weak self] (error) in
+    private func setupLocationUpdateListener() {
+        locationSubscription = LocationManager.current.locationUpdate$.sink(receiveCompletion: { [weak self] (error) in
             
             self?.output?.alert(title: "Failure", message: "Failed to detect your location. Please try again later.")
             self?.output?.dismissSpinners()
@@ -44,6 +39,17 @@ class StatusPresenter {
                                         longitude: location.coordinate.longitude)
             self?.output?.dismissSpinners()
         }
+    }
+    
+    private func setupNotificationUpdateListener() {
+        notificationSubscription = NotificationManager.shared.notificationStatusUpdate$.sink(receiveValue: { [weak self] (isEnabled) in
+            
+            if let isEnabled = isEnabled, isEnabled {
+                self?.output?.toggleNotificationButton(on: false)
+            } else {
+                self?.output?.toggleNotificationButton(on: true)
+            }
+        })
     }
 }
 
@@ -71,22 +77,37 @@ extension StatusPresenter : StatusInteractorOutput {
 
 extension StatusPresenter : StatusPresenterInput {
     
-    func refreshNotificationAuthorization() {
-        NotificationManager.shared.notificationSettings() { [weak self] (config) in
-            switch config.authorizationStatus {
-            case .authorized:
-                self?.output?.toggleNotificationButton(on: false)
-            case .denied, .notDetermined:
-                self?.output?.toggleNotificationButton(on: true)
-            default: break
-            }
-        }
+    var isLocationEnabled: Bool? {
+        return LocationManager.current.isLocationServiceEnabled()
+    }
+    
+    var numOfRows: Int {
+        return condition.directions.count
+    }
+    
+    func refreshPresenter() {
+        NotificationManager.shared.refreshAuthorizationStatus()
+    }
+    
+    func openAppSettings() {
+        try? LocationManager.current.openAppSettings()
     }
     
     func requestNotificationPermission() {
-        NotificationManager.shared.requestUserPermission()
+        guard let isEnabled = NotificationManager.shared.notificationStatusUpdate$.value
+        else {
+            NotificationManager.shared.requestUserPermission()
+            return
+        }
+        
+        if isEnabled {
+            self.output?.toggleNotificationButton(on: false)
+            self.output?.alert(title: "Notification Enabled", message: "Notification is already enabled.")
+        } else {
+            NotificationManager.shared.openSettings()
+        }
+        
     }
-    
     
     var condition:StatusCondition {
         get {
@@ -168,8 +189,9 @@ extension StatusPresenter : StatusPresenterInput {
         
         //LocationService is Undetermined
         if serviceEnabled == nil {
+            setupLocationUpdateListener()
             LocationManager.current.requestPermission()
-            startLocationWatcher()
+            return
             
         //LocationService was denied
         } else if serviceEnabled == false {
@@ -187,7 +209,7 @@ extension StatusPresenter : StatusPresenterInput {
 
         } else {
             
-            self.startLocationWatcher()
+            self.setupLocationUpdateListener()
             LocationManager.current.findCurrentUserLocation()
             
         }

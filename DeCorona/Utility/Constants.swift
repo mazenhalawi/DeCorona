@@ -35,3 +35,5 @@ let COLOR_RED = UIColor.init(red: 159/255, green: 9/255, blue: 10/255, alpha: 1.
 let COLOR_YELLOW = UIColor.init(red: 193/255, green: 169/255, blue: 11/255, alpha: 1.0)
 
 let CATEGORY_LOC_CHANGE = "LOCATION_CHANGE_NOTIFICATION"
+
+let KEY_APP_ACTIVE = "APPLICATION_ACTIVE"

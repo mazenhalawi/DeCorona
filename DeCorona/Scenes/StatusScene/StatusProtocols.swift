@@ -20,7 +20,8 @@ protocol StatusInteractorOutput : class {
 protocol StatusPresenterInput {
     func getLatestStatusUpdate()
     func requestNotificationPermission()
-    func refreshNotificationAuthorization()
+    func refreshPresenter()
+    func openAppSettings()
     var isLocationEnabled: Bool? { get }
     var numOfRows: Int { get }
     func contentForCell(at indexPath: IndexPath) -> String
