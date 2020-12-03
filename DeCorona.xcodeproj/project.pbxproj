@@ -12,7 +12,6 @@
 		BA03EE7D256F9D99003ECEA9 /* ResultStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03EE7C256F9D99003ECEA9 /* ResultStatus.swift */; };
 		BA03EE7F256FA05C003ECEA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03EE7E256FA05C003ECEA9 /* Constants.swift */; };
 		BA03EE83256FAECD003ECEA9 /* StatusVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03EE81256FAECD003ECEA9 /* StatusVC.swift */; };
-		BA03EE84256FAECD003ECEA9 /* StatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA03EE82256FAECD003ECEA9 /* StatusVC.xib */; };
 		BA03EE86256FAEDF003ECEA9 /* StatusPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03EE85256FAEDF003ECEA9 /* StatusPresenter.swift */; };
 		BA03EE88256FAEEB003ECEA9 /* StatusProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03EE87256FAEEB003ECEA9 /* StatusProtocols.swift */; };
 		BA03EE8A256FAEFE003ECEA9 /* StatusModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA03EE89256FAEFE003ECEA9 /* StatusModels.swift */; };
@@ -24,9 +23,7 @@
 		BA159307256E252700CE9380 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA159305256E252700CE9380 /* LaunchScreen.storyboard */; };
 		BA159312256E252800CE9380 /* DeCoronaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159311256E252800CE9380 /* DeCoronaTests.swift */; };
 		BA159324256E299400CE9380 /* LocationPermissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159322256E299400CE9380 /* LocationPermissionVC.swift */; };
-		BA159325256E299400CE9380 /* LocationPermissionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA159323256E299400CE9380 /* LocationPermissionVC.xib */; };
 		BA159328256E29AA00CE9380 /* NotificationPermissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159326256E29AA00CE9380 /* NotificationPermissionVC.swift */; };
-		BA159329256E29AA00CE9380 /* NotificationPermissionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA159327256E29AA00CE9380 /* NotificationPermissionVC.xib */; };
 		BA15932C256E2D8E00CE9380 /* Button_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15932B256E2D8E00CE9380 /* Button_extension.swift */; };
 		BA15932E256E3C1600CE9380 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA15932D256E3C1600CE9380 /* AppManager.swift */; };
 		BA159331256E5C4D00CE9380 /* LocationPermissionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA159330256E5C4D00CE9380 /* LocationPermissionCoordinator.swift */; };
@@ -41,6 +38,11 @@
 		BA2B0AD52578F6EE00B93CA9 /* BaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AD42578F6EE00B93CA9 /* BaseManager.swift */; };
 		BA2B0AD72579134A00B93CA9 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0AD62579134A00B93CA9 /* IndicatorView.xib */; };
 		BA2B0AD92579481C00B93CA9 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AD82579481C00B93CA9 /* IndicatorView.swift */; };
+		BA2B0AE22579672A00B93CA9 /* LocationPermissionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0AE42579672A00B93CA9 /* LocationPermissionVC.xib */; };
+		BA2B0AE7257968A400B93CA9 /* NotificationPermissionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0AE9257968A400B93CA9 /* NotificationPermissionVC.xib */; };
+		BA2B0AEC257968FD00B93CA9 /* StatusVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0AEE257968FD00B93CA9 /* StatusVC.xib */; };
+		BA2B0AF225796B8800B93CA9 /* String_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2B0AF125796B8800B93CA9 /* String_extension.swift */; };
+		BA2B0AF425796D9E00B93CA9 /* StringsList.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0AF325796D9E00B93CA9 /* StringsList.strings */; };
 		BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D42570202800FEBEC6 /* Err.swift */; };
 		BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */; };
 		BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0625723FF1004CC748 /* UIView_extension.swift */; };
@@ -66,7 +68,6 @@
 		BA03EE7C256F9D99003ECEA9 /* ResultStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultStatus.swift; sourceTree = "<group>"; };
 		BA03EE7E256FA05C003ECEA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA03EE81256FAECD003ECEA9 /* StatusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusVC.swift; sourceTree = "<group>"; };
-		BA03EE82256FAECD003ECEA9 /* StatusVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusVC.xib; sourceTree = "<group>"; };
 		BA03EE85256FAEDF003ECEA9 /* StatusPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPresenter.swift; sourceTree = "<group>"; };
 		BA03EE87256FAEEB003ECEA9 /* StatusProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusProtocols.swift; sourceTree = "<group>"; };
 		BA03EE89256FAEFE003ECEA9 /* StatusModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModels.swift; sourceTree = "<group>"; };
@@ -82,9 +83,7 @@
 		BA159311256E252800CE9380 /* DeCoronaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeCoronaTests.swift; sourceTree = "<group>"; };
 		BA159313256E252800CE9380 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA159322256E299400CE9380 /* LocationPermissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionVC.swift; sourceTree = "<group>"; };
-		BA159323256E299400CE9380 /* LocationPermissionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationPermissionVC.xib; sourceTree = "<group>"; };
 		BA159326256E29AA00CE9380 /* NotificationPermissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionVC.swift; sourceTree = "<group>"; };
-		BA159327256E29AA00CE9380 /* NotificationPermissionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationPermissionVC.xib; sourceTree = "<group>"; };
 		BA15932B256E2D8E00CE9380 /* Button_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button_extension.swift; sourceTree = "<group>"; };
 		BA15932D256E3C1600CE9380 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		BA159330256E5C4D00CE9380 /* LocationPermissionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionCoordinator.swift; sourceTree = "<group>"; };
@@ -103,6 +102,15 @@
 		BA2B0AD42578F6EE00B93CA9 /* BaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseManager.swift; sourceTree = "<group>"; };
 		BA2B0AD62579134A00B93CA9 /* IndicatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IndicatorView.xib; sourceTree = "<group>"; };
 		BA2B0AD82579481C00B93CA9 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		BA2B0AE1257966F400B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BA2B0AE32579672A00B93CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LocationPermissionVC.xib; sourceTree = "<group>"; };
+		BA2B0AE62579682D00B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LocationPermissionVC.strings; sourceTree = "<group>"; };
+		BA2B0AE8257968A400B93CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NotificationPermissionVC.xib; sourceTree = "<group>"; };
+		BA2B0AEB257968AE00B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/NotificationPermissionVC.strings; sourceTree = "<group>"; };
+		BA2B0AED257968FD00B93CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusVC.xib; sourceTree = "<group>"; };
+		BA2B0AF02579690400B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/StatusVC.strings; sourceTree = "<group>"; };
+		BA2B0AF125796B8800B93CA9 /* String_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_extension.swift; sourceTree = "<group>"; };
+		BA2B0AF325796D9E00B93CA9 /* StringsList.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = StringsList.strings; sourceTree = "<group>"; };
 		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
 		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
@@ -149,7 +157,7 @@
 				BA03EE89256FAEFE003ECEA9 /* StatusModels.swift */,
 				BA03EE85256FAEDF003ECEA9 /* StatusPresenter.swift */,
 				BA03EE81256FAECD003ECEA9 /* StatusVC.swift */,
-				BA03EE82256FAECD003ECEA9 /* StatusVC.xib */,
+				BA2B0AEE257968FD00B93CA9 /* StatusVC.xib */,
 			);
 			path = StatusScene;
 			sourceTree = "<group>";
@@ -205,6 +213,7 @@
 				BA1592FA256E252300CE9380 /* AppDelegate.swift */,
 				BA1592FC256E252300CE9380 /* SceneDelegate.swift */,
 				BA03EE7E256FA05C003ECEA9 /* Constants.swift */,
+				BA2B0AF325796D9E00B93CA9 /* StringsList.strings */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -247,7 +256,7 @@
 				BA159337256E600C00CE9380 /* LocationPermissionProtocols.swift */,
 				BA159335256E5F1100CE9380 /* LocationPermissionPresenter.swift */,
 				BA159322256E299400CE9380 /* LocationPermissionVC.swift */,
-				BA159323256E299400CE9380 /* LocationPermissionVC.xib */,
+				BA2B0AE42579672A00B93CA9 /* LocationPermissionVC.xib */,
 			);
 			path = LocationPermissionScene;
 			sourceTree = "<group>";
@@ -259,7 +268,7 @@
 				BA15933F256EB95600CE9380 /* NotificationPermissionProtocols.swift */,
 				BA15933D256EB94800CE9380 /* NotificationPermissionPresenter.swift */,
 				BA159326256E29AA00CE9380 /* NotificationPermissionVC.swift */,
-				BA159327256E29AA00CE9380 /* NotificationPermissionVC.xib */,
+				BA2B0AE9257968A400B93CA9 /* NotificationPermissionVC.xib */,
 			);
 			path = NotificationPermissionScene;
 			sourceTree = "<group>";
@@ -270,6 +279,7 @@
 				BA15932B256E2D8E00CE9380 /* Button_extension.swift */,
 				BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */,
 				BAB6CB0625723FF1004CC748 /* UIView_extension.swift */,
+				BA2B0AF125796B8800B93CA9 /* String_extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -393,6 +403,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = BA1592EE256E252300CE9380;
 			productRefGroup = BA1592F8256E252300CE9380 /* Products */;
@@ -410,13 +421,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA159325256E299400CE9380 /* LocationPermissionVC.xib in Resources */,
+				BA2B0AF425796D9E00B93CA9 /* StringsList.strings in Resources */,
+				BA2B0AE22579672A00B93CA9 /* LocationPermissionVC.xib in Resources */,
 				BAB6CB0E257500BF004CC748 /* DirectionCell.xib in Resources */,
 				BA2B0AD72579134A00B93CA9 /* IndicatorView.xib in Resources */,
 				BA159307256E252700CE9380 /* LaunchScreen.storyboard in Resources */,
-				BA159329256E29AA00CE9380 /* NotificationPermissionVC.xib in Resources */,
+				BA2B0AE7257968A400B93CA9 /* NotificationPermissionVC.xib in Resources */,
 				BA159304256E252700CE9380 /* Assets.xcassets in Resources */,
-				BA03EE84256FAECD003ECEA9 /* StatusVC.xib in Resources */,
+				BA2B0AEC257968FD00B93CA9 /* StatusVC.xib in Resources */,
 				BAB6CB1025760FFC004CC748 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +457,7 @@
 				BA159336256E5F1100CE9380 /* LocationPermissionPresenter.swift in Sources */,
 				BA03EE7A256F9D70003ECEA9 /* Result.swift in Sources */,
 				BA159342256EB97A00CE9380 /* NotificationPermissionCoordinator.swift in Sources */,
+				BA2B0AF225796B8800B93CA9 /* String_extension.swift in Sources */,
 				BA159334256E5C9C00CE9380 /* NavigationCoordinator.swift in Sources */,
 				BA159328256E29AA00CE9380 /* NotificationPermissionVC.swift in Sources */,
 				BA15932E256E3C1600CE9380 /* AppManager.swift in Sources */,
@@ -493,8 +506,36 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA159306256E252700CE9380 /* Base */,
+				BA2B0AE1257966F400B93CA9 /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BA2B0AE42579672A00B93CA9 /* LocationPermissionVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA2B0AE32579672A00B93CA9 /* Base */,
+				BA2B0AE62579682D00B93CA9 /* de */,
+			);
+			name = LocationPermissionVC.xib;
+			sourceTree = "<group>";
+		};
+		BA2B0AE9257968A400B93CA9 /* NotificationPermissionVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA2B0AE8257968A400B93CA9 /* Base */,
+				BA2B0AEB257968AE00B93CA9 /* de */,
+			);
+			name = NotificationPermissionVC.xib;
+			sourceTree = "<group>";
+		};
+		BA2B0AEE257968FD00B93CA9 /* StatusVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA2B0AED257968FD00B93CA9 /* Base */,
+				BA2B0AF02579690400B93CA9 /* de */,
+			);
+			name = StatusVC.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -504,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -564,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

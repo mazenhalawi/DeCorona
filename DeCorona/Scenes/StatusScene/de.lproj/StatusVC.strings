@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Air rooms regularly"; ObjectID = "3TW-K6-wKR"; */
+"3TW-K6-wKR.text" = "Lufträume regelmäßig";
+
+/* Class = "UILabel"; text = "your current location"; ObjectID = "82b-4p-S2w"; */
+"82b-4p-S2w.text" = "Deine aktuelle Position";
+
+/* Class = "UILabel"; text = "death:"; ObjectID = "9Cd-ee-3XL"; */
+"9Cd-ee-3XL.text" = "Tod:";
+
+/* Class = "UIButton"; normalTitle = "🔔 Enable notifications"; ObjectID = "LlR-im-7n3"; */
+"LlR-im-7n3.normalTitle" = "🔔 Benachrichtigungen aktivieren";
+
+/* Class = "UILabel"; text = "Wear a mask"; ObjectID = "Vyb-bH-UnX"; */
+"Vyb-bH-UnX.text" = "Eine Maske tragen";
+
+/* Class = "UILabel"; text = "cases per 100k"; ObjectID = "Z0k-wf-d0f"; */
+"Z0k-wf-d0f.text" = "Häuser für 100k";
+
+/* Class = "UILabel"; text = "Keep your distance"; ObjectID = "aSN-mE-MQn"; */
+"aSN-mE-MQn.text" = "Abstand halten";
+
+/* Class = "UILabel"; text = "Wash hands"; ObjectID = "c1E-6U-oe1"; */
+"c1E-6U-oe1.text" = "Hände waschen";
+
+/* Class = "UILabel"; text = "cases:"; ObjectID = "esw-KX-WOH"; */
+"esw-KX-WOH.text" = "Fälle:";
+
+/* Class = "UILabel"; text = "deaths:"; ObjectID = "gRs-WH-ldK"; */
+"gRs-WH-ldK.text" = "Todesfälle:";
+
+/* Class = "UILabel"; text = "Always Remember!"; ObjectID = "kSw-Gv-OQJ"; */
+"kSw-Gv-OQJ.text" = "Immer daran denken!";
+
+/* Class = "UILabel"; text = "updated:"; ObjectID = "xhK-1e-oYZ"; */
+"xhK-1e-oYZ.text" = "Aktualisiert:";
