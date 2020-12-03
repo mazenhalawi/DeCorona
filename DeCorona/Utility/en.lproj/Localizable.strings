@@ -19,3 +19,34 @@
 "DIRECTIONS_RED_STEP_1" = "Private parties and contacts: no more than 5 households or five people.";
 "DIRECTIONS_RED_STEP_2" = "Wearing a mask is mandatory in heavily frequented spaces, in pedestrian zones, in public buildings, for all grades during class, in universities, for attendees of ( sports ) events, etc.";
 "DIRECTIONS_RED_STEP_3" = "Curfew and ban on selling as well as consuming alcohol in public spaces from 22:00 onwards.";
+
+
+//LocationPermissionPresenter
+"TITLE_LOC_ERROR" = "Location Error";
+"MSG_LOC_ERROR" = "An unexpected error has occurred, please try again.";
+
+//StatusVC
+"TITLE_REFRESHER" = "Fetching latest data";
+"TITLE_LOC_REQ" = "Location Required";
+"MSG_LOC_REQ" = "You have disabled location services. We require your current location to fetch relevant data. Would you like to enable the service now?";
+"No" = "";
+"Yes" = "";
+
+//StatusPresenter
+"Failure" = "Failure";
+"MSG_LOC_FAIL" = "Failed to detect your location. Please try again later.";
+"TITLE_NO_DATA" = "No Data Found";
+"MSG_NO_DATA" = "No data found for your current location. Please try again later.";
+"TITLE_NOTIF_ENABLED" = "Notification Enabled";
+"MSG_NOTIF_ENABLED" = "Notification is already enabled.";
+"Undetermined" = "Undetermined";
+"Service Disabled" = "Service Disabled";
+
+
+//StatusInteractor
+"SERVER_DATA_ERR" = "The data returned from the server is unrecognizable. Please try again.";
+
+//NotificationManager
+"NOTIFICATION_TITLE" = "Corona Status Update";
+"NOTIFICATION_SUBTITLE" = "Location change update";
+"NOTIFICATION_MSG" = "It seems you have moved into another location. Check the updated directions for the current location.";
