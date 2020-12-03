@@ -7,13 +7,28 @@
 //
 
 import Foundation
+import Combine
 
 class NotificationPermissionPresenter {
     weak var output: NotificationPermissionPresenterOutput?
     let coordinator: NotificationPermissionCoorindatorInput
+    var notificationUpdateSubscription:Cancellable?
     
     init(coordinator: NotificationPermissionCoorindatorInput) {
         self.coordinator = coordinator
+        
+        notificationUpdateSubscription = NotificationManager.shared.notificationStatusUpdate$.sink(receiveValue: { (isEnabled) in
+            if let _ = isEnabled {
+                DispatchQueue.main.async {
+                    self.notificationUpdateSubscription?.cancel()
+                    self.coordinator.finish()
+                }
+            }
+        })
+    }
+    
+    deinit {
+        notificationUpdateSubscription?.cancel()
     }
     
 }
