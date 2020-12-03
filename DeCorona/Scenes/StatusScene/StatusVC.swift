@@ -117,6 +117,7 @@ class StatusVC: UIViewController {
     }
     
     @objc private func refreshData() {
+        self.spinnerMain.stopAnimating()
         self.presenter.getLatestStatusUpdate()
     }
 }

@@ -205,7 +205,7 @@
                                     </constraints>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="334" placeholderIntrinsicHeight="120" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9cS-AL-7BI">
-                                    <rect key="frame" x="40" y="295" width="334" height="819"/>
+                                    <rect key="frame" x="20" y="295" width="374" height="819"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="J1w-zH-60h"/>
@@ -329,7 +329,7 @@
                                     </constraints>
                                 </stackView>
                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlR-im-7n3">
-                                    <rect key="frame" x="274" y="0.0" width="132" height="20"/>
+                                    <rect key="frame" x="266" y="0.0" width="132" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="pTv-yI-BGh"/>
                                     </constraints>
@@ -355,12 +355,12 @@
                                 <constraint firstItem="UyQ-XC-90s" firstAttribute="top" secondItem="DaI-Rb-FDC" secondAttribute="top" constant="25" id="E5z-6y-2zU"/>
                                 <constraint firstItem="8ZM-y4-hSX" firstAttribute="leading" secondItem="UyQ-XC-90s" secondAttribute="leading" id="FkF-1O-h1c"/>
                                 <constraint firstItem="c4o-xb-e8b" firstAttribute="top" secondItem="kSw-Gv-OQJ" secondAttribute="bottom" constant="12" id="FwI-3e-DA9"/>
-                                <constraint firstItem="9cS-AL-7BI" firstAttribute="leading" secondItem="DaI-Rb-FDC" secondAttribute="leading" constant="40" id="dvO-su-w0d"/>
-                                <constraint firstAttribute="trailing" secondItem="9cS-AL-7BI" secondAttribute="trailing" constant="40" id="fIE-B7-lcV"/>
+                                <constraint firstItem="9cS-AL-7BI" firstAttribute="leading" secondItem="DaI-Rb-FDC" secondAttribute="leading" constant="20" id="dvO-su-w0d"/>
+                                <constraint firstAttribute="trailing" secondItem="9cS-AL-7BI" secondAttribute="trailing" constant="20" id="fIE-B7-lcV"/>
                                 <constraint firstItem="c4o-xb-e8b" firstAttribute="top" secondItem="9cS-AL-7BI" secondAttribute="bottom" priority="900" constant="60" id="g1d-mr-UUi"/>
                                 <constraint firstItem="9cS-AL-7BI" firstAttribute="top" secondItem="8ZM-y4-hSX" secondAttribute="bottom" constant="8" id="j0l-Id-gzK"/>
                                 <constraint firstItem="jdM-Ov-yR4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UyQ-XC-90s" secondAttribute="trailing" constant="20" id="jgN-dN-Bvr"/>
-                                <constraint firstAttribute="trailing" secondItem="LlR-im-7n3" secondAttribute="trailing" constant="8" id="kms-Cb-qui"/>
+                                <constraint firstAttribute="trailing" secondItem="LlR-im-7n3" secondAttribute="trailing" constant="16" id="kms-Cb-qui"/>
                                 <constraint firstItem="8ZM-y4-hSX" firstAttribute="top" secondItem="UyQ-XC-90s" secondAttribute="bottom" constant="30" id="lMA-JK-KiV"/>
                                 <constraint firstItem="upA-35-kHG" firstAttribute="trailing" secondItem="JUh-Vr-pnM" secondAttribute="trailing" id="mO5-2d-JdN"/>
                                 <constraint firstItem="9cS-AL-7BI" firstAttribute="top" secondItem="upA-35-kHG" secondAttribute="bottom" constant="40" id="n25-Uz-Kfc"/>

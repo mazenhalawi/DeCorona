@@ -95,9 +95,4 @@ extension NotificationManager : UNUserNotificationCenterDelegate {
         completionHandler()
     }
     
-    //Display user notification settings
-    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
-        print(notification?.date.description)
-    }
-    
 }

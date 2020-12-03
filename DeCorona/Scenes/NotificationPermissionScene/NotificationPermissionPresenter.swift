@@ -40,6 +40,7 @@ extension NotificationPermissionPresenter : NotificationPermissionPresenterInput
     }
     
     func skipAndContinue() {
+        notificationUpdateSubscription?.cancel()
         coordinator.finish()
     }
     
