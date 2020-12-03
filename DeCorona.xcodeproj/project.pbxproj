@@ -45,7 +45,6 @@
 		BA2B0AFF257987DE00B93CA9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B01257987DE00B93CA9 /* HeaderView.xib */; };
 		BA2B0B042579880500B93CA9 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B062579880500B93CA9 /* IndicatorView.xib */; };
 		BA2B0B12257994D100B93CA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B14257994D100B93CA9 /* InfoPlist.strings */; };
-		BA2B0B172579979900B93CA9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B162579979900B93CA9 /* Info.plist */; };
 		BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D42570202800FEBEC6 /* Err.swift */; };
 		BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */; };
 		BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0625723FF1004CC748 /* UIView_extension.swift */; };
@@ -117,8 +116,8 @@
 		BA2B0B052579880500B93CA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/IndicatorView.xib; sourceTree = "<group>"; };
 		BA2B0B082579880900B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/IndicatorView.strings; sourceTree = "<group>"; };
 		BA2B0B13257994D100B93CA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BA2B0B15257994DC00B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BA2B0B162579979900B93CA9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA2B0B2125799EF300B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BA2B0B2225799F0F00B93CA9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
 		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
@@ -214,12 +213,12 @@
 		BA15931C256E255F00CE9380 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				BA2B0B162579979900B93CA9 /* Info.plist */,
 				BA2B0ACE25777AEA00B93CA9 /* Locations */,
 				BA159303256E252700CE9380 /* Assets.xcassets */,
 				BA1592FA256E252300CE9380 /* AppDelegate.swift */,
 				BA1592FC256E252300CE9380 /* SceneDelegate.swift */,
 				BA03EE7E256FA05C003ECEA9 /* Constants.swift */,
+				BA2B0B2225799F0F00B93CA9 /* Info.plist */,
 				BA2B0AF72579767600B93CA9 /* Localizable.strings */,
 				BA2B0B14257994D100B93CA9 /* InfoPlist.strings */,
 			);
@@ -437,7 +436,6 @@
 				BA2B0AE7257968A400B93CA9 /* NotificationPermissionVC.xib in Resources */,
 				BA159304256E252700CE9380 /* Assets.xcassets in Resources */,
 				BA2B0AEC257968FD00B93CA9 /* StatusVC.xib in Resources */,
-				BA2B0B172579979900B93CA9 /* Info.plist in Resources */,
 				BA2B0AFF257987DE00B93CA9 /* HeaderView.xib in Resources */,
 				BA2B0B12257994D100B93CA9 /* InfoPlist.strings in Resources */,
 			);
@@ -579,7 +577,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA2B0B13257994D100B93CA9 /* en */,
-				BA2B0B15257994DC00B93CA9 /* de */,
+				BA2B0B2125799EF300B93CA9 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
