@@ -50,3 +50,6 @@
 "NOTIFICATION_TITLE" = "Corona Status Update";
 "NOTIFICATION_SUBTITLE" = "Aktualisierung der Standortänderung";
 "NOTIFICATION_MSG" = "Es scheint, dass Sie an einen anderen Ort gezogen sind. Überprüfen Sie die aktualisierten Anweisungen für den aktuellen Standort.";
+
+"NOTIFICATION_STATUS_TITLE" = "Corona Status Update";
+"NOTIFICATION_STATUS_MSG" = "Wir haben eine Änderung der Corona-Statusstufe für den Bereich festgestellt, in dem Sie sich gerade befinden. Tippen Sie hier, um weitere ...";

@@ -71,16 +71,16 @@
                                     <rect key="frame" x="298" y="50" width="100" height="120"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JUh-Vr-pnM" userLabel="stackIndicator">
-                                            <rect key="frame" x="-3.5" y="14.5" width="107" height="91"/>
+                                            <rect key="frame" x="4" y="14.5" width="92" height="91"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cases per 100k" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="70" translatesAutoresizingMaskIntoConstraints="NO" id="Z0k-wf-d0f">
-                                                    <rect key="frame" x="29" y="0.0" width="49.5" height="29"/>
+                                                    <rect key="frame" x="21.5" y="0.0" width="49.5" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="c8f-qF-4ND">
-                                                    <rect key="frame" x="8" y="37" width="91" height="54"/>
+                                                    <rect key="frame" x="4" y="37" width="84" height="54"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -88,9 +88,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Z0k-wf-d0f" firstAttribute="centerX" secondItem="JUh-Vr-pnM" secondAttribute="centerX" id="RqN-eX-l9x"/>
-                                                <constraint firstAttribute="trailing" secondItem="c8f-qF-4ND" secondAttribute="trailing" constant="8" id="g2W-ak-HCD"/>
-                                                <constraint firstItem="c8f-qF-4ND" firstAttribute="leading" secondItem="JUh-Vr-pnM" secondAttribute="leading" constant="8" id="gfK-p6-d9y"/>
-                                                <constraint firstItem="c8f-qF-4ND" firstAttribute="width" secondItem="JUh-Vr-pnM" secondAttribute="width" multiplier="0.85" id="hPB-o7-YrW"/>
+                                                <constraint firstAttribute="trailing" secondItem="c8f-qF-4ND" secondAttribute="trailing" constant="4" id="g2W-ak-HCD"/>
+                                                <constraint firstItem="c8f-qF-4ND" firstAttribute="leading" secondItem="JUh-Vr-pnM" secondAttribute="leading" constant="4" id="gfK-p6-d9y"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -100,6 +99,8 @@
                                         <constraint firstAttribute="width" constant="100" id="d1e-BY-U4i"/>
                                         <constraint firstItem="JUh-Vr-pnM" firstAttribute="centerX" secondItem="jdM-Ov-yR4" secondAttribute="centerX" id="g7i-le-PRC"/>
                                         <constraint firstAttribute="height" constant="120" id="l8h-Ev-Y9Q"/>
+                                        <constraint firstItem="JUh-Vr-pnM" firstAttribute="leading" secondItem="jdM-Ov-yR4" secondAttribute="leading" constant="4" id="qUP-dc-cph"/>
+                                        <constraint firstAttribute="trailing" secondItem="JUh-Vr-pnM" secondAttribute="trailing" constant="4" id="yq1-1h-AkB"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
@@ -126,10 +127,10 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="upA-35-kHG" userLabel="stackMoreInfo">
-                                    <rect key="frame" x="294.5" y="184" width="107" height="71"/>
+                                    <rect key="frame" x="302" y="184" width="92" height="71"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Nu-ED-JpB" userLabel="stackCases">
-                                            <rect key="frame" x="15.5" y="0.0" width="76" height="14.5"/>
+                                            <rect key="frame" x="8" y="0.0" width="76" height="14.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cases:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esw-KX-WOH">
                                                     <rect key="frame" x="0.0" y="0.0" width="36.5" height="14.5"/>
@@ -146,7 +147,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="azP-bg-lN2" userLabel="stackDeaths">
-                                            <rect key="frame" x="9.5" y="14.5" width="88" height="14.5"/>
+                                            <rect key="frame" x="2" y="14.5" width="88" height="14.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="deaths:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRs-WH-ldK">
                                                     <rect key="frame" x="0.0" y="0.0" width="42.5" height="14.5"/>
@@ -163,7 +164,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="RfS-CO-DI7" userLabel="stackDeathRate">
-                                            <rect key="frame" x="16" y="29" width="75" height="14.5"/>
+                                            <rect key="frame" x="8.5" y="29" width="75" height="14.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="death:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cd-ee-3XL">
                                                     <rect key="frame" x="0.0" y="0.0" width="36" height="14.5"/>
@@ -180,7 +181,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t4t-FC-ZNH" userLabel="stackLastUpdate">
-                                            <rect key="frame" x="34" y="43.5" width="39.5" height="27.5"/>
+                                            <rect key="frame" x="26.5" y="43.5" width="39.5" height="27.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="updated:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhK-1e-oYZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="39.5" height="15"/>

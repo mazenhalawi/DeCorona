@@ -12,7 +12,13 @@ import Combine
 class StatusPresenter {
     weak var output:StatusPresenterOutput?
     private let interactor: StatusInteractorInput
-    private var currentStatus:Status?
+    private var currentStatus:Status? {
+        didSet {
+            if let encoded = try? JSONEncoder().encode(currentStatus) {
+                UserDefaults.standard.set(encoded, forKey: LAST_SAVED_STATUS)
+            }
+        }
+    }
     private var locationSubscription: Cancellable?
     private var notificationSubscription:Cancellable?
     

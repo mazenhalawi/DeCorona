@@ -47,6 +47,9 @@
 "SERVER_DATA_ERR" = "The data returned from the server is unrecognizable. Please try again.";
 
 //NotificationManager
-"NOTIFICATION_TITLE" = "Corona Status Update";
-"NOTIFICATION_SUBTITLE" = "Location change update";
-"NOTIFICATION_MSG" = "It seems you have moved into another location. Check the updated directions for the current location.";
+"NOTIFICATION_LOC_TITLE" = "Location Status Update";
+"NOTIFICATION_LOC_SUBTITLE" = "Location change update";
+"NOTIFICATION_LOC_MSG" = "It seems you have moved into another location. Check the updated directions for the current location.";
+
+"NOTIFICATION_STATUS_TITLE" = "Corona Status Update";
+"NOTIFICATION_STATUS_MSG" = "We have detected a change in the Corona Status Level for the area you are currently in. Tap to find more...";

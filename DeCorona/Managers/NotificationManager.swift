@@ -57,12 +57,33 @@ class NotificationManager : BaseManager {
         }
     }
     
+    func notifyUserOfStatusChange() {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "NOTIFICATION_STATUS_TITLE".localize()
+        content.body = "NOTIFICATION_STATUS_MSG".localize()
+        content.categoryIdentifier = CATEGORY_LOC_CHANGE
+        content.threadIdentifier = CATEGORY_LOC_CHANGE
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString,
+                                            content: content,
+                                            trigger: trigger)
+        
+        center.add(request) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     func notifyUserOfLocationChange() {
         
         let content = UNMutableNotificationContent()
-        content.title = "NOTIFICATION_TITLE".localize()
-        content.subtitle = "NOTIFICATION_SUBTITLE".localize()
-        content.body = "NOTIFICATION_MSG".localize()
+        content.title = "NOTIFICATION_LOC_TITLE".localize()
+        content.subtitle = "NOTIFICATION_LOC_SUBTITLE".localize()
+        content.body = "NOTIFICATION_LOC_MSG".localize()
         content.categoryIdentifier = CATEGORY_LOC_CHANGE
         content.threadIdentifier = CATEGORY_LOC_CHANGE
         
