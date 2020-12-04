@@ -6,16 +6,47 @@
   Copyright © 2020 Mazen Halawi. All rights reserved.
 */
 
-"UNRECOGNIZED_ERROR" = "An unrecognized error has occurred please check your internet connection and try again.";
+"UNRECOGNIZED_ERROR" = "Ein nicht erkannter Fehler ist aufgetreten. Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.";
 
-"DIRECTIONS_GREEN_STEP_1" = "Limitations of face-to-face contact in public spaces.";
-"DIRECTIONS_GREEN_STEP_2" = "Private events (i.e. weddings etc.) with a maximum of 100 participants in closed spaces and a maximum of 200 participants in the open.";
-"DIRECTIONS_GREEN_STEP_3" = "Wearing a mask is mandatory when (including, but not limited to) using public transportation, going shopping, eating and drinking in restaurants, bars, etc... and in case minimum distance (1.5m) cannot be kept.";
+"DIRECTIONS_GREEN_STEP_1" = "Einschränkungen des persönlichen Kontakts im öffentlichen Raum.";
+"DIRECTIONS_GREEN_STEP_2" = "Private Veranstaltungen (d. H. Hochzeiten usw.) mit maximal 100 Teilnehmern in geschlossenen Räumen und maximal 200 Teilnehmern im Freien.";
+"DIRECTIONS_GREEN_STEP_3" = "Das Tragen einer Maske ist obligatorisch, wenn (einschließlich, aber nicht beschränkt auf) die Nutzung öffentlicher Verkehrsmittel, Einkaufen, Essen und Trinken in Restaurants, Bars usw. und der Mindestabstand (1,5 m) nicht eingehalten werden kann.";
 
-"DIRECTIONS_YELLOW_STEP_1" = "Private parties and contacts: no more than two households or ten people.";
-"DIRECTIONS_YELLOW_STEP_2" = "Wearing a mask is mandatory in heavily frequented spaces, in pedestrian zones, in public buildings, in secondary schools during class, in universities, for attendees of (sports) events, etc.";
-"DIRECTIONS_YELLOW_STEP_3" = "Curfew and ban on selling as well as consuming alcohol in public spaces from 23:00 onwards.";
+"DIRECTIONS_YELLOW_STEP_1" = "Private Feiern und Kontakte: nicht mehr als zwei Haushalte oder zehn Personen.";
+"DIRECTIONS_YELLOW_STEP_2" = "Das Tragen einer Maske ist in stark frequentierten Räumen, in Fußgängerzonen, in öffentlichen Gebäuden, in weiterführenden Schulen während des Unterrichts, an Universitäten, für Teilnehmer an (Sport-) Veranstaltungen usw. obligatorisch.";
+"DIRECTIONS_YELLOW_STEP_3" = "Ausgangssperre und Verbot des Verkaufs sowie des Konsums von Alkohol im öffentlichen Raum ab 23:00 Uhr.";
 
-"DIRECTIONS_RED_STEP_1" = "Private parties and contacts: no more than 5 households or five people.";
-"DIRECTIONS_RED_STEP_2" = "Wearing a mask is mandatory in heavily frequented spaces, in pedestrian zones, in public buildings, for all grades during class, in universities, for attendees of ( sports ) events, etc.";
-"DIRECTIONS_RED_STEP_3" = "Curfew and ban on selling as well as consuming alcohol in public spaces from 22:00 onwards.";
+"DIRECTIONS_RED_STEP_1" = "Private Feiern und Kontakte: nicht mehr als 5 Haushalte oder fünf Personen.";
+"DIRECTIONS_RED_STEP_2" = "Das Tragen einer Maske ist in stark frequentierten Räumen, in Fußgängerzonen, in öffentlichen Gebäuden, für alle Klassenstufen, an Universitäten, für Teilnehmer an (Sport-) Veranstaltungen usw. obligatorisch.";
+"DIRECTIONS_RED_STEP_3" = "Ausgangssperre und Verbot des Verkaufs sowie des Konsums von Alkohol im öffentlichen Raum ab 22:00 Uhr.";
+
+
+//LocationPermissionPresenter
+"TITLE_LOC_ERROR" = "Standortfehler";
+"MSG_LOC_ERROR" = "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.";
+
+//StatusVC
+"TITLE_REFRESHER" = "Neueste Daten abrufen";
+"TITLE_LOC_REQ" = "Ort erforderlich";
+"MSG_LOC_REQ" = "Sie haben Ortungsdienste deaktiviert. Wir benötigen Ihren aktuellen Standort, um relevante Daten abzurufen. Möchten Sie den Dienst jetzt aktivieren?";
+"No" = "Nein";
+"Yes" = "Ja";
+
+//StatusPresenter
+"Failure" = "Fehler";
+"MSG_LOC_FAIL" = "Fehler beim Erkennen Ihres Standorts. Bitte versuchen Sie es später noch einmal.";
+"TITLE_NO_DATA" = "Keine Daten gefunden";
+"MSG_NO_DATA" = "Für Ihren aktuellen Standort wurden keine Daten gefunden. Bitte versuchen Sie es später noch einmal.";
+"TITLE_NOTIF_ENABLED" = "Benachrichtigung aktiviert";
+"MSG_NOTIF_ENABLED" = "Die Benachrichtigung ist bereits aktiviert.";
+"Undetermined" = "Unbestimmt";
+"Service Disabled" = "Dienst deaktiviert";
+
+
+//StatusInteractor
+"SERVER_DATA_ERR" = "Die vom Server zurückgegebenen Daten sind nicht erkennbar. Bitte versuche es erneut.";
+
+//NotificationManager
+"NOTIFICATION_TITLE" = "Corona Status Update";
+"NOTIFICATION_SUBTITLE" = "Aktualisierung der Standortänderung";
+"NOTIFICATION_MSG" = "Es scheint, dass Sie an einen anderen Ort gezogen sind. Überprüfen Sie die aktualisierten Anweisungen für den aktuellen Standort.";

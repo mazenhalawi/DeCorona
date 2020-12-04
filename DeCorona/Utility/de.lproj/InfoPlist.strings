@@ -5,6 +5,6 @@
   Created by Mazen on 12/03/2020.
   Copyright © 2020 Mazen Halawi. All rights reserved.
 */
-"NSLocationAlwaysAndWhenInUseUsageDescription" = "Wir benötigen Ihre Erlaubnis, Ihren Standort immer zu überprüfen, um Ihnen relevante Informationen zu dem Gebiet zu liefern, in dem Sie sich gerade befinden.";
+NSLocationAlwaysAndWhenInUseUsageDescription = "Wir benötigen Ihre Erlaubnis, Ihren Standort immer zu überprüfen, um Ihnen relevante Informationen zu dem Gebiet zu liefern, in dem Sie sich gerade befinden.";
 
-"NSLocationWhenInUseUsageDescription" = "Wir benötigen Ihre Erlaubnis, Ihren Standort immer zu überprüfen, um Ihnen relevante Informationen zu dem Gebiet zu liefern, in dem Sie sich gerade befinden.";
+NSLocationWhenInUseUsageDescription = "Wir benötigen Ihre Erlaubnis, Ihren Standort immer zu überprüfen, um Ihnen relevante Informationen zu dem Gebiet zu liefern, in dem Sie sich gerade befinden.";
