@@ -189,6 +189,7 @@
 		BA1592F9256E252300CE9380 /* DeCorona */ = {
 			isa = PBXGroup;
 			children = (
+				BA2B0B24257B4D0F00B93CA9 /* Delegates */,
 				BAB6CB002571612F004CC748 /* Views */,
 				BA03EE7B256F9D87003ECEA9 /* Enums */,
 				BA15932F256E5BAF00CE9380 /* Models */,
@@ -215,8 +216,6 @@
 			children = (
 				BA2B0ACE25777AEA00B93CA9 /* Locations */,
 				BA159303256E252700CE9380 /* Assets.xcassets */,
-				BA1592FA256E252300CE9380 /* AppDelegate.swift */,
-				BA1592FC256E252300CE9380 /* SceneDelegate.swift */,
 				BA03EE7E256FA05C003ECEA9 /* Constants.swift */,
 				BA2B0B2225799F0F00B93CA9 /* Info.plist */,
 				BA2B0AF72579767600B93CA9 /* Localizable.strings */,
@@ -325,6 +324,15 @@
 				BA2B0AD82579481C00B93CA9 /* IndicatorView.swift */,
 			);
 			path = IndicatorView;
+			sourceTree = "<group>";
+		};
+		BA2B0B24257B4D0F00B93CA9 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BA1592FA256E252300CE9380 /* AppDelegate.swift */,
+				BA1592FC256E252300CE9380 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		BAB6CB002571612F004CC748 /* Views */ = {
