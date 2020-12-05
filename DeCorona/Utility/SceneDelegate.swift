@@ -57,14 +57,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         
+        print("BTTaskScheduler cencelling all task requests")
         BGTaskScheduler.shared.cancelAllTaskRequests()
         
+        print("schedule app refresh fired")
         scheduleAppRefresh()
     }
 
     private func registerBackgroundTask() {
+        print("registerBackgroundTask fired")
         
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.syslynx.appRefresh", using: nil) { (task) in
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.syslynx.statusupdate", using: nil) { (task) in
     
             print("registering background task")
             
@@ -126,16 +129,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 }
             }
             
-            LocationManager.current.forceFindUserLocation()
+            LocationManager.current.findUserLocationImmediately()
         }
     }
     
     func scheduleAppRefresh() {
         
-        let request = BGProcessingTaskRequest(identifier: "com.syslynx.appRefresh")
+        let request = BGProcessingTaskRequest(identifier: "com.syslynx.statusupdate")
         request.requiresNetworkConnectivity = true
         request.requiresExternalPower = false
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 1)
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 1 * 60)
         
         do {
             try BGTaskScheduler.shared.submit(request)

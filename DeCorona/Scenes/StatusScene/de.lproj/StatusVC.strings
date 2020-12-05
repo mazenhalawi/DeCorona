@@ -27,7 +27,7 @@
 "esw-KX-WOH.text" = "Fälle:";
 
 /* Class = "UILabel"; text = "deaths:"; ObjectID = "gRs-WH-ldK"; */
-"gRs-WH-ldK.text" = "Todesfälle:";
+"gRs-WH-ldK.text" = "Tote:";
 
 /* Class = "UILabel"; text = "Always Remember!"; ObjectID = "kSw-Gv-OQJ"; */
 "kSw-Gv-OQJ.text" = "Immer daran denken!";

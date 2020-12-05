@@ -70,7 +70,7 @@
 	</array>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>com.syslynx.appRefresh</string>
+		<string>com.syslynx.statusupdate</string>
 	</array>
 </dict>
 </plist>
