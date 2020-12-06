@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "We require your permission to access your location in order to supply you with accurate information regarding Corona virus."; ObjectID = "2o7-VS-ah7"; */
+"2o7-VS-ah7.text" = "Wir benötigen Ihre Erlaubnis, um auf Ihren Standort zugreifen zu können, um Ihnen genaue Informationen zum Corona-Virus zu liefern.";
+
+/* Class = "UIButton"; normalTitle = "Skip and continue"; ObjectID = "MyM-Tg-fQU"; */
+"MyM-Tg-fQU.normalTitle" = "Überspringen und fortfahren";
+
+/* Class = "UIButton"; normalTitle = "Enable Location"; ObjectID = "rfm-Pe-HKj"; */
+"rfm-Pe-HKj.normalTitle" = "Aktiviere Standort";
