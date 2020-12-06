@@ -57,14 +57,6 @@ class LocationManager : BaseManager {
         manager.requestAlwaysAuthorization()
     }
     
-    func findUserLocationImmediately() {
-        print("fired findUserLocationImmediately")
-        manager.stopUpdatingLocation()
-        manager.requestLocation()
-//        manager.stopMonitoringSignificantLocationChanges()
-//        manager.startMonitoringSignificantLocationChanges()
-    }
-    
     func findCurrentUserLocation() {
         
         if let serviceEnabled = isLocationServiceEnabled(),

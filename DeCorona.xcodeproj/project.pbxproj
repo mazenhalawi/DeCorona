@@ -45,6 +45,7 @@
 		BA2B0AFF257987DE00B93CA9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B01257987DE00B93CA9 /* HeaderView.xib */; };
 		BA2B0B042579880500B93CA9 /* IndicatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B062579880500B93CA9 /* IndicatorView.xib */; };
 		BA2B0B12257994D100B93CA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B14257994D100B93CA9 /* InfoPlist.strings */; };
+		BA2B0B28257D1B4C00B93CA9 /* BGTask Testing Script.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BA2B0B27257D1B4C00B93CA9 /* BGTask Testing Script.rtf */; };
 		BA8DC8D52570202800FEBEC6 /* Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D42570202800FEBEC6 /* Err.swift */; };
 		BA8DC8D72570F13D00FEBEC6 /* UIAlertController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */; };
 		BAB6CB0725723FF1004CC748 /* UIView_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB6CB0625723FF1004CC748 /* UIView_extension.swift */; };
@@ -118,6 +119,7 @@
 		BA2B0B13257994D100B93CA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA2B0B2125799EF300B93CA9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA2B0B2225799F0F00B93CA9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA2B0B27257D1B4C00B93CA9 /* BGTask Testing Script.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "BGTask Testing Script.rtf"; sourceTree = "<group>"; };
 		BA8DC8D42570202800FEBEC6 /* Err.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Err.swift; sourceTree = "<group>"; };
 		BA8DC8D62570F13D00FEBEC6 /* UIAlertController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController_extension.swift; sourceTree = "<group>"; };
 		BAB6CB0625723FF1004CC748 /* UIView_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_extension.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				BA2B0B2225799F0F00B93CA9 /* Info.plist */,
 				BA2B0AF72579767600B93CA9 /* Localizable.strings */,
 				BA2B0B14257994D100B93CA9 /* InfoPlist.strings */,
+				BA2B0B27257D1B4C00B93CA9 /* BGTask Testing Script.rtf */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				BA2B0AEC257968FD00B93CA9 /* StatusVC.xib in Resources */,
 				BA2B0AFF257987DE00B93CA9 /* HeaderView.xib in Resources */,
 				BA2B0B12257994D100B93CA9 /* InfoPlist.strings in Resources */,
+				BA2B0B28257D1B4C00B93CA9 /* BGTask Testing Script.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

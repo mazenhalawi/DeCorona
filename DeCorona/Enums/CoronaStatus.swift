@@ -12,6 +12,7 @@ enum StatusCondition {
     case Green
     case Yellow
     case Red
+    case DarkRed
     case Null
     
     
@@ -19,7 +20,8 @@ enum StatusCondition {
         switch statusLevel {
         case let level where level > 0 && level < 35: self = StatusCondition.Green
         case let level where level <= 50: self = StatusCondition.Yellow
-        case let level where level > 50: self = StatusCondition.Red
+        case let level where level <= 100: self = StatusCondition.Red
+        case let level where level > 100: self = StatusCondition.DarkRed
         default: self = StatusCondition.Null
         }
     }
@@ -29,6 +31,7 @@ enum StatusCondition {
         case .Green: return DIRECTIONS_GREEN
         case .Yellow: return DIRECTIONS_YELLOW
         case .Red: return DIRECTIONS_RED
+        case .DarkRed: return DIRECTIONS_DARK_RED
         case .Null: return []
         }
     }
@@ -38,6 +41,7 @@ enum StatusCondition {
         case .Green: return COLOR_GREEN
         case .Yellow: return COLOR_YELLOW
         case .Red: return COLOR_RED
+        case .DarkRed: return COLOR_DARK_RED
         default: return UIColor.clear
         }
     }
