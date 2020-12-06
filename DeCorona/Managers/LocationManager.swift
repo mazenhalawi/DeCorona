@@ -58,8 +58,11 @@ class LocationManager : BaseManager {
     }
     
     func findUserLocationImmediately() {
-        manager.stopMonitoringSignificantLocationChanges()
-        manager.startMonitoringSignificantLocationChanges()
+        print("fired findUserLocationImmediately")
+        manager.stopUpdatingLocation()
+        manager.requestLocation()
+//        manager.stopMonitoringSignificantLocationChanges()
+//        manager.startMonitoringSignificantLocationChanges()
     }
     
     func findCurrentUserLocation() {

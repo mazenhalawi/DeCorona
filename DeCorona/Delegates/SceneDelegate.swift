@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BackgroundTasks
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,8 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
-        registerBackgroundTask()
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
@@ -56,96 +53,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        
-        print("BTTaskScheduler cencelling all task requests")
-        BGTaskScheduler.shared.cancelAllTaskRequests()
-        
-        print("schedule app refresh fired")
-        scheduleAppRefresh()
-    }
-
-    private func registerBackgroundTask() {
-        print("registerBackgroundTask fired")
-        
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.syslynx.statusupdate", using: nil) { (task) in
     
-            print("registering background task")
-            
-            task.expirationHandler = {
-                print("background task failed")
-                task.setTaskCompleted(success: false)
-            }
-            
-            print("testing service enabling")
-            guard let locationServiceEnabled = LocationManager.current.isLocationServiceEnabled(),
-                let notifyServiceEnabled = NotificationManager.shared.notificationStatusUpdate$.value,
-                locationServiceEnabled,
-                notifyServiceEnabled
-            else {
-                print("SceneDelegate - User has not permitted Location and Notification services")
-                task.setTaskCompleted(success: true)
-                    return
-            }
-            
-            print("finding location")
-            let _ = LocationManager.current.locationUpdate$.sink(receiveCompletion: { (error) in
-                print("SceneDelegate - Location manager raised an error.")
-                
-            }) { (location) in
-                print("Location found now fetching data")
-                ConnectionManager().queryLatestCoronaStatusFor(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) { (result) in
-                    
-                    if let data = result.data,
-                        result.status == .Success,
-                        let decoded = try? JSONDecoder().decode(StatusResponse.self, from: data),
-                        decoded.statusList.count > 0 {
-                        
-                        let newStatus = decoded.statusList.first(where: {$0.location.hasPrefix("SK ")}) ?? decoded.statusList.first!
-                        let saved = UserDefaults.standard.data(forKey: LAST_SAVED_STATUS)
-                        
-                        let savedStatus = try? JSONDecoder().decode(Status.self, from: saved ?? Data())
-                        
-                        //If saved record already exist
-                        if let savedStatus = savedStatus {
-                            
-                            if savedStatus == newStatus {
-                                print("User is still in the same location")
-                            } else if savedStatus.didStatusChange(from: newStatus) {
-                                //TODO: Send notification to user
-                                NotificationManager.shared.notifyUserOfStatusChange()
-                            }
-                            
-                        } else {
-                            
-                            NotificationManager.shared.notifyUserOfStatusChange()
-                        }
-                        
-                        task.setTaskCompleted(success: true)
-                        
-                    } else {
-                        print("SceneDelegate - ConnectionManager returned unsuccessful.")
-                        task.setTaskCompleted(success: true)
-                    }
-                }
-            }
-            
-            LocationManager.current.findUserLocationImmediately()
-        }
-    }
-    
-    func scheduleAppRefresh() {
+        (UIApplication.shared.delegate as! AppDelegate).scheduleAppTasks()
         
-        let request = BGProcessingTaskRequest(identifier: "com.syslynx.statusupdate")
-        request.requiresNetworkConnectivity = true
-        request.requiresExternalPower = false
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 1 * 60)
-        
-        do {
-            try BGTaskScheduler.shared.submit(request)
-            print("submitted task request")
-        } catch (let error) {
-            print("SceneDelegate - scheduleAppRefresh: " + error.localizedDescription)
-        }
     }
 
 }

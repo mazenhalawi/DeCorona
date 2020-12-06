@@ -11,7 +11,7 @@ import Foundation
 
 class ConnectionManager {
     
-    var sessionConfiguration:URLSessionConfiguration {
+    var config:URLSessionConfiguration {
         get {
             let config = URLSessionConfiguration.default
             config.allowsCellularAccess = true
@@ -23,6 +23,7 @@ class ConnectionManager {
             return config
         }
     }
+
     
     let baseURL = "https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=death_rate,cases,deaths,cases_per_100k,cases_per_population,county,last_update,cases7_per_100k,recovered&inSR=4326&spatialRel=esriSpatialRelIntersects&returnGeometry=false&returnDistinctValues=true&f=json&geometryType=esriGeometryEnvelope"
     
@@ -38,7 +39,7 @@ class ConnectionManager {
             fatalError("ConnectionManager - queryLatestCoronaStatusFor method failed with bad URL")
         }
         
-        URLSession.init(configuration: sessionConfiguration).dataTask(with: url) { (data, response, error) in
+        URLSession.init(configuration: config).dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completionHandler(Result<Data>(status: ResultStatus.Failure, error: error.localizedDescription))
             } else if let response = response as? HTTPURLResponse, response.statusCode == 200 {

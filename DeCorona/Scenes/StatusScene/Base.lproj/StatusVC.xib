@@ -237,7 +237,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="158" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="socialdistancing_white" translatesAutoresizingMaskIntoConstraints="NO" id="FyK-KU-1Pl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50.000000000000028"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="YYT-qA-nvM"/>
                                                                 <constraint firstAttribute="height" constant="50" id="vZ0-2R-93h"/>
@@ -258,7 +258,7 @@
                                                     <rect key="frame" x="183" y="0.0" width="158" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="handwash_white" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-u8-FJ2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50.000000000000014" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="KvR-M0-7at"/>
                                                                 <constraint firstAttribute="width" constant="50" id="Spe-Kw-DRA"/>
@@ -305,7 +305,7 @@
                                                     <rect key="frame" x="183" y="0.0" width="158" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openwindow" translatesAutoresizingMaskIntoConstraints="NO" id="Pwb-R2-t0U">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50.000000000000028"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="Awe-v1-DEp"/>
                                                                 <constraint firstAttribute="width" constant="50" id="v2p-Kc-18x"/>
