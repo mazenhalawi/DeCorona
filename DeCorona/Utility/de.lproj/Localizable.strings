@@ -20,6 +20,8 @@
 "DIRECTIONS_RED_STEP_2" = "Das Tragen einer Maske ist in stark frequentierten Räumen, in Fußgängerzonen, in öffentlichen Gebäuden, für alle Klassenstufen, an Universitäten, für Teilnehmer an (Sport-) Veranstaltungen usw. obligatorisch.";
 "DIRECTIONS_RED_STEP_3" = "Ausgangssperre und Verbot des Verkaufs sowie des Konsums von Alkohol im öffentlichen Raum ab 22:00 Uhr.";
 
+"DIRECTIONS_DARKRED_STEP_1" = "Veranstaltungen (Clubtreffen, Sportveranstaltungen, kulturelle Veranstaltungen...) dürfen 50 Personen nicht überschreiten";
+"DIRECTIONS_DARKRED_STEP_2" = "Schließzeit für Lebensmittel- / Gastronomie-Verkaufsstellen, Verbot des Alkoholverkaufs und des Alkoholkonsums an bestimmten öffentlichen Orten ab 21:00 Uhr";
 
 //LocationPermissionPresenter
 "TITLE_LOC_ERROR" = "Standortfehler";

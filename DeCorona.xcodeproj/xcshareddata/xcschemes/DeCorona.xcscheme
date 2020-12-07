@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "BA15930C256E252800CE9380"
                BuildableName = "DeCoronaTests.xctest"
                BlueprintName = "DeCoronaTests"
+               ReferencedContainer = "container:DeCorona.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BA2B0B2C257E100C00B93CA9"
+               BuildableName = "DeCoronaUITests.xctest"
+               BlueprintName = "DeCoronaUITests"
                ReferencedContainer = "container:DeCorona.xcodeproj">
             </BuildableReference>
          </TestableReference>

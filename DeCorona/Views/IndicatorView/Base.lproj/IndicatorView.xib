@@ -35,44 +35,57 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="xUt-PP-ebQ"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-t9-waO">
-                            <rect key="frame" x="82" y="39" width="41.5" height="14.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" name="RedLight"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv1-oX-OtM">
-                            <rect key="frame" x="82" y="115.5" width="41.5" height="14.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" name="GreenLight"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULL-Df-vVb">
-                            <rect key="frame" x="82" y="77.5" width="47" height="14.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" name="YellowLight"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wqt-j2-1QN">
+                            <rect key="frame" x="82" y="39" width="50" height="91"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Critical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-t9-waO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="15.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="textColor" red="0.46537100214129679" green="0.25287439976681225" blue="0.71839308375634525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-7m-r71">
+                                    <rect key="frame" x="0.0" y="25.5" width="50" height="15"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="textColor" name="RedLight"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULL-Df-vVb">
+                                    <rect key="frame" x="0.0" y="50.5" width="50" height="15.5"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="textColor" name="YellowLight"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neutral" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zv1-oX-OtM">
+                                    <rect key="frame" x="0.0" y="76" width="50" height="15"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="textColor" name="GreenLight"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="ULL-Df-vVb" firstAttribute="leading" secondItem="r4R-hK-uHG" secondAttribute="trailing" constant="16" id="27K-MV-a5t"/>
-                        <constraint firstItem="ULL-Df-vVb" firstAttribute="centerY" secondItem="r4R-hK-uHG" secondAttribute="centerY" id="4Vi-U0-eFM"/>
+                        <constraint firstItem="Wqt-j2-1QN" firstAttribute="bottom" secondItem="r4R-hK-uHG" secondAttribute="bottom" id="1H6-Pr-MEe"/>
                         <constraint firstItem="TtK-hS-fyY" firstAttribute="top" secondItem="Mg7-qz-cr9" secondAttribute="top" constant="12" id="4td-e9-hCP"/>
-                        <constraint firstItem="BKc-t9-waO" firstAttribute="top" secondItem="r4R-hK-uHG" secondAttribute="top" id="9yg-Ur-5mg"/>
                         <constraint firstAttribute="width" constant="150" id="ALZ-Li-773"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zv1-oX-OtM" secondAttribute="trailing" constant="8" id="NaN-mH-wzi"/>
+                        <constraint firstItem="Wqt-j2-1QN" firstAttribute="leading" secondItem="r4R-hK-uHG" secondAttribute="trailing" constant="16" id="OTk-cR-sVC"/>
                         <constraint firstItem="TtK-hS-fyY" firstAttribute="centerX" secondItem="Mg7-qz-cr9" secondAttribute="centerX" id="Ohp-xA-IWH"/>
                         <constraint firstAttribute="height" constant="150" id="PwM-8N-dV3"/>
                         <constraint firstItem="r4R-hK-uHG" firstAttribute="top" secondItem="TtK-hS-fyY" secondAttribute="bottom" constant="12" id="VxX-HD-RHb"/>
                         <constraint firstItem="r4R-hK-uHG" firstAttribute="leading" secondItem="Mg7-qz-cr9" secondAttribute="leading" constant="16" id="XEK-Zd-XNm"/>
                         <constraint firstAttribute="bottom" secondItem="r4R-hK-uHG" secondAttribute="bottom" constant="20" id="aHv-Dn-Eyp"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BKc-t9-waO" secondAttribute="trailing" constant="8" id="aNv-aD-iQL"/>
-                        <constraint firstItem="BKc-t9-waO" firstAttribute="leading" secondItem="r4R-hK-uHG" secondAttribute="trailing" constant="16" id="dm1-g0-OR2"/>
-                        <constraint firstItem="Zv1-oX-OtM" firstAttribute="bottom" secondItem="r4R-hK-uHG" secondAttribute="bottom" id="iso-9b-bWu"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ULL-Df-vVb" secondAttribute="trailing" constant="8" id="kWf-FP-IA2"/>
-                        <constraint firstItem="Zv1-oX-OtM" firstAttribute="leading" secondItem="r4R-hK-uHG" secondAttribute="trailing" constant="16" id="y01-G4-5Sc"/>
+                        <constraint firstItem="Wqt-j2-1QN" firstAttribute="top" secondItem="r4R-hK-uHG" secondAttribute="top" id="auB-48-54B"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">

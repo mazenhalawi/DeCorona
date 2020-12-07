@@ -20,6 +20,8 @@
 "DIRECTIONS_RED_STEP_2" = "Wearing a mask is mandatory in heavily frequented spaces, in pedestrian zones, in public buildings, for all grades during class, in universities, for attendees of ( sports ) events, etc.";
 "DIRECTIONS_RED_STEP_3" = "Curfew and ban on selling as well as consuming alcohol in public spaces from 22:00 onwards.";
 
+"DIRECTIONS_DARKRED_STEP_1" = "Events (e.g. club meetings, sporting events, cultural events, etc.) must not exceed 50 persons";
+"DIRECTIONS_DARKRED_STEP_2" = "Closing time for food / gastronomy outlets, ban on alcohol sales and alcohol consumption sales in specific public places form 21:00";
 
 //LocationPermissionPresenter
 "TITLE_LOC_ERROR" = "Location Error";
