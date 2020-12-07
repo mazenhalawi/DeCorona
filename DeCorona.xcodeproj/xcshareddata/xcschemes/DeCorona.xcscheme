@@ -39,6 +39,16 @@
                ReferencedContainer = "container:DeCorona.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BA2B0B2C257E100C00B93CA9"
+               BuildableName = "DeCoronaUITests.xctest"
+               BlueprintName = "DeCoronaUITests"
+               ReferencedContainer = "container:DeCorona.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

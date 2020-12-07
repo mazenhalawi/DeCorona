@@ -23,10 +23,10 @@ class AppManager {
         self.window = initialWindow
         self.window.rootViewController = baseNavController
         
-        let visits = UserDefaults.standard.integer(forKey: "VISIT_COUNT")
+        let visits = UserDefaults.standard.integer(forKey: KEY_VISIT_COUNT)
         if (visits == 0) {
             showLocationPermissionScene()
-            UserDefaults.standard.set(visits + 1, forKey: "VISIT_COUNT")
+            UserDefaults.standard.set(visits + 1, forKey: KEY_VISIT_COUNT)
         } else {
             showStatusScene()
         }
