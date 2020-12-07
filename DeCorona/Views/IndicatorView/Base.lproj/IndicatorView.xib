@@ -50,7 +50,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Critical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-t9-waO">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="15.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                    <color key="textColor" name="DarkRed"/>
+                                    <color key="textColor" red="0.46537100214129679" green="0.25287439976681225" blue="0.71839308375634525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-7m-r71">
@@ -112,9 +112,6 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="DarkRed">
-            <color red="0.3979814403553299" green="0.0" blue="0.0186147212496174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="GreenLight">
             <color red="0.023529411764705882" green="0.58431372549019611" blue="0.054901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

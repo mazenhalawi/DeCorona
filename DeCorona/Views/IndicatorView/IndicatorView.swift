@@ -38,7 +38,7 @@ class IndicatorView : UIView {
     private func convertContainerToGradientColor() {
         let ca = CAGradientLayer()
         ca.frame = CGRect(origin: CGPoint.zero, size: self.container.bounds.size)
-        ca.colors = [COLOR_DARK_RED.cgColor, COLOR_RED.cgColor, COLOR_YELLOW.cgColor, COLOR_GREEN.cgColor]
+        ca.colors = [COLOR_PURPLE.cgColor, COLOR_RED.cgColor, COLOR_YELLOW.cgColor, COLOR_GREEN.cgColor]
         ca.locations = [0, 0.33, 0.66, 1]
         ca.startPoint = CGPoint(x: 0.5, y: 0)
         ca.endPoint = CGPoint(x: 0.5, y: 1)

@@ -41,7 +41,7 @@ enum StatusCondition {
         case .Green: return COLOR_GREEN
         case .Yellow: return COLOR_YELLOW
         case .Red: return COLOR_RED
-        case .DarkRed: return COLOR_DARK_RED
+        case .DarkRed: return COLOR_PURPLE
         default: return UIColor.clear
         }
     }
